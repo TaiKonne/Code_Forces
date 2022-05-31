@@ -3,22 +3,47 @@ using namespace std;
 
 int main()
 {
-    string a;
-    getline(cin, a);
-    string b = "";
-    for (int i = 0; i < a.size(); i++)
+    int n;
+    cin >> n;
+    int a[101];
+    int vtmin = 100000, vtmax = 0;
+    for (int i = 0; i < n; i++)
     {
-        if (a[i] > 96 && a[i] < 123)
+        cin >> a[i];
+        vtmin = min(vtmin, a[i]);
+        vtmax = max(vtmax, a[i]);
+    }
+    // tim vi tri min
+
+    int vtimin = 0, vtimax = 0;
+    for (int i = n - 1; i >= 0; i--)
+    {
+        if (a[i] == vtmin)
         {
-            b += a[i];
+            vtimin = i;
+            break;
         }
     }
-    sort(b.begin(),b.end());
-    int dem=0;
-    for (int i = 0; i < b.size(); i++)
+    for (int i = 0; i < n; i++)
     {
-        if(b[i]!=b[i-1])
-            dem++;
+        if (a[i] == vtmax)
+        {
+            vtimax = i;
+            break;
+        }
     }
-    cout<<dem;
+
+    int s1 = 0, s = 0;
+
+    if (vtimin < vtimax)
+    {
+        vtimin = (n - 1) - vtimin;
+        cout << vtimax - 1 + vtimin;
+    }
+    else
+    {
+        vtimin = (n - 1) - vtimin;
+        cout << vtimax + vtimin;
+    }
+
 }

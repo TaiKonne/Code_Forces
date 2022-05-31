@@ -4,30 +4,21 @@ using namespace std;
 int main()
 {
     string a;
+    string b = "";
     cin >> a;
-    string b = "WUB";
     int k = 0;
-    int m = 1;
-
-    // for(int i = 0;i<=a.size()+1;i++)
-    // {
-    //     a[m] = a[i];
-    //     m++;
-    // }
-
-    for (int i = 0; i <= a.size(); i++)
+    for (int i = 0; i < a.size(); i++)
     {
-        if (a[i] == b[k])
+        if (a[i] == 'W' && a[i + 1] == 'U' && a[i + 2] == 'B')
         {
-            k++;
+            i += 2;
+            b+=" ";
+            continue;
         }
-        if (k == 3)
+        else
         {
-            a.erase(i - 3, 3);
+            b+=a[i];
         }
     }
-    for (int i = 1; i <= m; i++)
-    {
-        cout << a[i] << " ";
-    }
+    cout<<b;
 }

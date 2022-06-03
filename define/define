@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define nl << '\n'
+#define vta vector<int> a
+#define ys cout << "YES" nl
+#define nope cout << "NO" nl
+#define ll long long
+#define db double
+#define p_b push_back
+#define bgvt begin()
+#define edvt end()

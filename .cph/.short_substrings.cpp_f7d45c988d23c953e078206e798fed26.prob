@@ -1,0 +1,1 @@
+{"name":"Local: short_substrings","url":"c:\\Users\\Admin\\Desktop\\codeforces\\short_substrings.cpp","tests":[{"id":1654126784329,"input":"4\nabbaac\nac\nbccddaaf\nzzzzzzzzzz","output":"abac\nac\nbcdaf\nzzzzzz"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Admin\\Desktop\\codeforces\\short_substrings.cpp","group":"local","local":true}

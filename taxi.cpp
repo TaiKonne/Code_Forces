@@ -1,69 +1,28 @@
+// 4005097     Jul 3, 2013 3:58:36 AM	fuwutu	 158B - Taxi	 GNU C++0x	Accepted	46 ms	0 KB
 #include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
-    int n;
+    int n = 0, s = 0, dem[5] = {0};
     cin >> n;
+    while (n--)
+    {
+        cin >> s;
+        dem[s] += 1;
+    }
+    s = dem[4] + dem[3] + dem[2] / 2;
 
-    int d1 = 0, d2 = 0, d3 = 0, d4 = 0;
-    for (int i = 0; i < n; i++)
+    dem[1] -= dem[3];
+    if (dem[2] % 2 == 1)
     {
-        int t;
-        cin >> t;
-        if (t == 1)
-        {
-            d1++;
-        }
-        else if (t == 2)
-            d2++;
-        else if (t == 3)
-            d3++;
-        else
-            d4++;
+        s += 1;
+        dem[1] -= 2;
     }
-
-    int s = 0;
-    // 1 1 1 1 2 2 2 2 2
-    if (d3 > d1)
+    if (dem[1] > 0)
     {
-        s += d1;
-        d3 = d3 - d1;
-        d1 = 0;
+        s += (dem[1] + 3) / 4;
     }
-    else if (d3 == d1)
-    {
-        s += d3;
-        d3 = 0;
-        d1 = 0;
-    }
-    else if (d3 < d1)
-    {
-        s += d3;
-        d3 = 0;
-        d1 = d1 - d3;
-    }
-    if (d2 > d1)
-    {
-        s += d1;
-        d2 = d2 - d1;
-        d1 = 0;
-    }
-    else if (d2 == d1)
-    {
-        s += d2;
-        d2 = 0;
-        d1 = 0;
-    }
-    else if(d2<d1)
-    {
-        s += d2;
-        d1 = d1 - d2;
-        d2=0;
-    }
-    if(d2%4==0)
-    {
-        s += d2/4;
-    }
-    cout << s<<" "<<d1<<" "<<d2<<" "<<d3;
+    cout << s;
+    return 0;
 }

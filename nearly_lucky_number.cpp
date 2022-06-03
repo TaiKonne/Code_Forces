@@ -7,18 +7,22 @@ int main()
 {
     ll n;
     cin >> n;
-
+    int dem = 0;
+    ll t = 0;
     while (n != 0)
     {
-        ll t = n % 10;
-        if (t != 4 || t != 7)
+        t = n % 10;
+        if (t == 4 || t == 7)
         {
-            cout << "NO";
-            return 0;
+            dem++;
         }
-        // cout<<t<<" ";
         n /= 10;
     }
 
-    cout << "YES";
+    if (dem == 4 || dem == 7)
+    {
+        cout << "YES";
+    }
+    else
+        cout << "NO";
 }

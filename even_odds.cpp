@@ -1,19 +1,25 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-
-#define ll long long
 
 int main()
 {
-    ll n, k, t;
-    cin>>n>>k;
+    long long n, k, t;
+    cin >> n >> k;
 
-    if((n/2)>=k)
+    if (n % 2 == 0) // n chan
     {
-        cout<<n/2;
+        t = n / 2;
     }
-    else if((n/2)<k)
+    else // n le
     {
-        t = k - 
+        t = (n + 1) / 2;
+    }
+    if (k <= t)
+    {
+        cout << (k * 2) - 1;
+    }
+    else
+    {
+        cout << (k - t) * 2;
     }
 }

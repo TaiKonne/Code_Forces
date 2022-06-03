@@ -3,26 +3,44 @@ using namespace std;
 
 int main()
 {
-    int n, a, b, c;
-    // n chieu dai ruy bang
-    // a b c chieu dai can cat de toi uu nhat
-    cin >> n >> a >> b >> c;
-    vector<int> e;
-    e.push_back(a);
-    e.push_back(b);
-    e.push_back(c);
-    sort(e.begin(), e.end());
+    int n;
+    cin >> n;
+    vector<int> a;
+    int i = 3;
 
-    int s = 0, dem = 0;
-    for (int i = 0; i < e.size(); i++)
+    while (i--)
     {
-        if (s < n)
+        int t;
+        cin >> t;
+        a.push_back(t);
+    }
+
+    sort(a.begin(), a.end());
+    if (a[0] == 1)
+    {
+        cout << n;
+        return 0;
+    }
+    else if (n % 2 == 0 && a[0] % 2 != 0)
+    {
+        cout << n / a[0];
+        return 0;
+    }
+    int s = 0, dem = 0;
+    for (int i = 0; i < a.size(); i++)
+    {
+        if (s != n)
         {
-            s += e[i];
-        }
-        else if (s > n)
-        {
-            s -= e[i];
+            if (s < n)
+            {
+                s += a[i];
+                dem++;
+            }
+            else if (s > n)
+            {
+                i = 0;
+                s -= a[i];
+            }
         }
         else if (s == n)
         {
@@ -30,4 +48,5 @@ int main()
             return 0;
         }
     }
+    // cout << dem;
 }

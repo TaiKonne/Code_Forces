@@ -10,10 +10,15 @@ using namespace std;
 #define pb push_back
 #define bg begin()
 #define ed end()
-#define rbg rbegin()
-#define red rend()
 
 int main()
 {
-    
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int a;
+        cin>>a;
+        cout << a / 2 nl;
+    }
 }

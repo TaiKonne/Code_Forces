@@ -10,10 +10,21 @@ using namespace std;
 #define pb push_back
 #define bg begin()
 #define ed end()
-#define rbg rbegin()
-#define red rend()
 
 int main()
 {
-    
+    int n,m;
+    cin>>n>>m;
+    int flag = n*m;
+    while(flag--)
+    {
+        string a;
+        cin>>a;
+        if(a[0]=='C'||a[0]=='M'||a[0]=='Y')
+        {
+            cout<<"#Color";
+            return 0;
+        }
+    }
+        cout<<"#Black&White";
 }

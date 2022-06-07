@@ -16,23 +16,33 @@ using namespace std;
 #define sz size()
 #define space << " "
 
+void solve()
+{
+    int w, h, n;
+    cin >> w >> h >> n;
+    int dem = 1;
+    while (h % 2 == 0)
+    {
+        h /= 2;
+        dem *= 2;
+    }
+    while (w % 2 == 0)
+    {
+        w /= 2;
+        dem *= 2;
+    }
+    if (dem >= n)
+        yep;
+    else
+        nope;
+}
+
 int main()
 {
     int t;
     cin >> t;
     while (t--)
     {
-        int n;
-        cin >> n;
-        if (n % 3 == 0)
-        {
-            n /= 3;
-            cout << n space << n nl;
-        }
-        else
-        {
-            n /= 3;
-            cout << n space << n + 1 nl;
-        }
+        solve();
     }
 }

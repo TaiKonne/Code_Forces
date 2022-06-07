@@ -6,15 +6,10 @@ using namespace std;
 #define yep cout << "YES" nl
 #define nope cout << "NO" nl
 #define ll long long
-#define l long
 #define db double
 #define pb push_back
 #define bg begin()
 #define ed end()
-#define rbg rbegin()
-#define red rend()
-#define sz size()
-#define space << " "
 
 int main()
 {
@@ -22,17 +17,22 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin >> n;
-        if (n % 3 == 0)
+        int a;
+        cin >> a;
+        int dem = 0;
+        int flag = (a % 10) - 1;
+
+        while (a != 0)
         {
-            n /= 3;
-            cout << n space << n nl;
+            dem++;
+            a /= 10;
         }
-        else
-        {
-            n /= 3;
-            cout << n space << n + 1 nl;
-        }
+        if (dem == 2)
+            dem++;
+        else if (dem == 3)
+            dem += 3;
+        else if (dem == 4)
+            dem += 6;
+        cout << dem + flag * 10 nl;
     }
 }

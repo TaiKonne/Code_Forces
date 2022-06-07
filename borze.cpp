@@ -18,21 +18,24 @@ using namespace std;
 
 int main()
 {
-    int t;
-    cin >> t;
-    while (t--)
+    string a;
+    cin >> a;
+    for (int i = 0; i < a.sz; i++)
     {
-        int n;
-        cin >> n;
-        if (n % 3 == 0)
+        if (a[i] == '.')
         {
-            n /= 3;
-            cout << n space << n nl;
+            // i += 1;
+            cout << "0";
         }
-        else
+        if (a[i] == '-' && a[i + 1] == '.')
         {
-            n /= 3;
-            cout << n space << n + 1 nl;
+            cout << 1;
+            i += 1;
+        }
+        if (a[i] == '-' && a[i + 1] == '-')
+        {
+            cout << 2;
+            i++;
         }
     }
 }

@@ -10,10 +10,22 @@ using namespace std;
 #define pb push_back
 #define bg begin()
 #define ed end()
-#define rbg rbegin()
-#define red rend()
 
 int main()
 {
-    
+    int a[5];
+
+    for (int i = 1; i <= 4; i++)
+    {
+        cin >> a[i];
+    }
+    string t;
+    cin >> t;
+    ll s = 0;
+    for (int i = 0; i < t.size(); i++)
+    {
+        int b = (int)(t[i] - '0');
+        s += a[b];
+    }
+    cout << s;
 }

@@ -24,15 +24,23 @@ int main()
     {
         int n;
         cin >> n;
+        int m = n;
         if (n % 3 == 0)
         {
-            n /= 3;
-            cout << n space << n nl;
+            m /= 3;
+            cout << m space << m nl;
         }
         else
         {
-            n /= 3;
-            cout << n space << n + 1 nl;
+            m /= 3;
+            if (m + (m + 1) * 2 == n)
+            {
+                cout << m space << m + 1 nl;
+            }
+            else if ((m + 1) + (m)*2 == n)
+            {
+                cout << m+1 space << m nl;
+            }
         }
     }
 }

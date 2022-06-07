@@ -20,19 +20,28 @@ int main()
 {
     int t;
     cin >> t;
+
     while (t--)
     {
-        int n;
-        cin >> n;
-        if (n % 3 == 0)
+        int a;
+        cin >> a;
+        vt b;
+        int s1 = 0;
+        while (a--)
         {
-            n /= 3;
-            cout << n space << n nl;
+            int s;
+            cin >> s;
+            b.pb(s);
         }
-        else
+        sort(b.bg, b.ed);
+        b.pb(0);
+        s1 = b[b.sz - 2];
+        int Min = (int)s1;
+
+        for (int i = 0; i < b.sz - 1; i++)
         {
-            n /= 3;
-            cout << n space << n + 1 nl;
+            Min = min(Min, abs(b[i + 1] - b[i]));
         }
+        cout << Min nl;
     }
 }

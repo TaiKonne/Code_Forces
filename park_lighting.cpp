@@ -22,17 +22,15 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin >> n;
-        if (n % 3 == 0)
+        int n, m;
+        cin >> n >> m;
+        if (n * m % 2 != 0)
         {
-            n /= 3;
-            cout << n space << n nl;
+            cout << (m * n + 1) / 2 nl;
         }
         else
         {
-            n /= 3;
-            cout << n space << n + 1 nl;
+            cout << n * m / 2 nl;
         }
     }
 }

@@ -22,17 +22,18 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin >> n;
-        if (n % 3 == 0)
+        vt a;
+        for (int i = 0; i < 4; i++)
         {
-            n /= 3;
-            cout << n space << n nl;
+            int z;
+            cin >> z;
+            a.pb(z);
         }
+        if (a[2] > a[0] && a[2] > a[1] && a[3] > a[0] && a[3] > a[1])
+            nope;
+        else if (a[0] > a[2] && a[1] > a[2] && a[0] > a[3] && a[1] > a[3])
+            nope;
         else
-        {
-            n /= 3;
-            cout << n space << n + 1 nl;
-        }
+            yep;
     }
 }

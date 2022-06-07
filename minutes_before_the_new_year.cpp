@@ -6,7 +6,6 @@ using namespace std;
 #define yep cout << "YES" nl
 #define nope cout << "NO" nl
 #define ll long long
-#define l long
 #define db double
 #define pb push_back
 #define bg begin()
@@ -22,17 +21,11 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin >> n;
-        if (n % 3 == 0)
-        {
-            n /= 3;
-            cout << n space << n nl;
-        }
-        else
-        {
-            n /= 3;
-            cout << n space << n + 1 nl;
-        }
+        int h, m;
+
+        cin >> h >> m;
+
+        h = (24 - h) * 60 - m;
+        cout << h nl;
     }
 }

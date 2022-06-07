@@ -16,23 +16,20 @@ using namespace std;
 #define sz size()
 #define space << " "
 
+int Max = 0;
+
+ll tinh(int n, int m)
+{
+    if (n == 1 || m == 1)
+    {
+        return 1;
+    }
+    return tinh(n - 1, m) + tinh(n, m - 1);
+}
+
 int main()
 {
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        int n;
-        cin >> n;
-        if (n % 3 == 0)
-        {
-            n /= 3;
-            cout << n space << n nl;
-        }
-        else
-        {
-            n /= 3;
-            cout << n space << n + 1 nl;
-        }
-    }
+    ll n;
+    cin >> n;
+    cout << tinh(n, n);
 }

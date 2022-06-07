@@ -18,21 +18,6 @@ using namespace std;
 
 int main()
 {
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        int n;
-        cin >> n;
-        if (n % 3 == 0)
-        {
-            n /= 3;
-            cout << n space << n nl;
-        }
-        else
-        {
-            n /= 3;
-            cout << n space << n + 1 nl;
-        }
-    }
+
+
 }

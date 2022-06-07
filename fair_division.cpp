@@ -20,19 +20,36 @@ int main()
 {
     int t;
     cin >> t;
+
     while (t--)
     {
         int n;
+        int s = 0;
+        int keo1 = 0, keo2 = 0;
         cin >> n;
-        if (n % 3 == 0)
+
+        while (n--)
         {
-            n /= 3;
-            cout << n space << n nl;
+            int a;
+            cin >> a;
+            s += a;
+            if (a == 1)
+                keo1++;
+            else
+                keo2++;
         }
-        else
+        if (s % 2 == 0)
         {
-            n /= 3;
-            cout << n space << n + 1 nl;
+            n /= 2;
+            if (s % 2 == 0 && keo1 % 2 == 0 && keo2 % 2 == 0)
+                yep;
+            else
+                nope;
+        }
+        if (s % 2 != 0)
+        {
+            nope;
+            continue;
         }
     }
 }

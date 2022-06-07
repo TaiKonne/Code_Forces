@@ -18,21 +18,34 @@ using namespace std;
 
 int main()
 {
-    int t;
-    cin >> t;
-    while (t--)
+    int n;
+    cin >> n;
+    int s = 0;
+
+    if (n % 2 == 0)
     {
-        int n;
-        cin >> n;
-        if (n % 3 == 0)
+        int dem = n / 2;
+        cout << dem nl;
+        while (dem--)
         {
-            n /= 3;
-            cout << n space << n nl;
+            cout << 2 space;
+        }
+        return 0;
+    }
+
+    cout << n / 2 nl;
+
+    while (s <= n) // 2 2 2 3
+    {
+        if (s + 2 < n - 1)
+        {
+            s += 2;
+            cout << 2 space;
         }
         else
         {
-            n /= 3;
-            cout << n space << n + 1 nl;
+            cout << 3;
+            return 0;
         }
     }
 }

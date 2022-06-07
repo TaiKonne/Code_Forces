@@ -2,7 +2,7 @@
 using namespace std;
 
 #define nl << '\n'
-#define vta vector<int> a
+#define vt vector<int> 
 #define ys cout << "YES" nl
 #define nope cout << "NO" nl
 #define ll long long

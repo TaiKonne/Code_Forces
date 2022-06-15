@@ -25,26 +25,15 @@ int main()
     {
         int n;
         cin >> n;
-        int dem1 = 0, dem2 = 0;
+        int n1 = 0, n2 = 0, n3 = 0;
+        int s = 0;
         while (n--)
         {
             int z;
             cin >> z;
-            if (z == 1)
-                dem1++;
-            else
-                dem2++;
+            if (z == 3 || z == 1)
+                s++;
         }
-
-        if ((dem1 + 2 * dem2) % 2 != 0)
-            nope;
-        else
-        {
-            int s = (dem1 + 2 * dem2) / 2;
-            if (s % 2 == 0 || (s % 2 == 1 && dem1 != 0))
-                yep;
-            else
-                nope;
-        }
+        cout << s nl;
     }
 }

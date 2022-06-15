@@ -19,27 +19,24 @@ using namespace std;
 
 int main()
 {
-    int t;
-    while (t--)
+    int m;
+    cin >> m;
+    string a;
+    cin >> a;
+    int n = 0, r = 0;
+    for (int i = 0; i < a.sz; i++)
     {
-        int n;
-        cin >> n;
-        int dem1 = 0, dem2 = 0;
-        while (n--)
-        {
-            int z;
-            cin >> z;
-            if (z == 1)
-                dem1++;
-            else
-                dem2++;
-        }
-
-        if (((dem2 * 2) + dem1) % 2 == 0)
-        {
-            yep;
-        }
-        else
-            nope;
+        if (a[i] == 'n')
+            n++;
+        if (a[i] == 'r')
+            r++;
+    }
+    while (n--)
+    {
+        cout << 1 space;
+    }
+    while (r--)
+    {
+        cout << 0 space;
     }
 }

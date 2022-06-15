@@ -25,26 +25,16 @@ int main()
     {
         int n;
         cin >> n;
-        int dem1 = 0, dem2 = 0;
-        while (n--)
+        int a[n];
+
+        for (int i = 0; i < n; i++)
         {
-            int z;
-            cin >> z;
-            if (z == 1)
-                dem1++;
-            else
-                dem2++;
+            cin >> a[i];
         }
 
-        if ((dem1 + 2 * dem2) % 2 != 0)
-            nope;
+        if (a[0] + a[1] > a[n - 1])
+            cout << -1 nl;
         else
-        {
-            int s = (dem1 + 2 * dem2) / 2;
-            if (s % 2 == 0 || (s % 2 == 1 && dem1 != 0))
-                yep;
-            else
-                nope;
-        }
+            cout << 1 space << 2 space << n nl;
     }
 }

@@ -2,12 +2,11 @@
 using namespace std;
 
 #define nl << '\n'
-#define vti vector<int>
-#define vtll vector<long long>
+#define vt vector<int>
 #define yep cout << "YES" nl
 #define nope cout << "NO" nl
 #define ll long long
-#define lg long
+#define l long
 #define db double
 #define pb push_back
 #define bg begin()
@@ -20,26 +19,19 @@ using namespace std;
 int main()
 {
     int t;
+    cin >> t;
     while (t--)
     {
-        int n;
-        cin >> n;
-        int dem1 = 0, dem2 = 0;
-        while (n--)
-        {
-            int z;
-            cin >> z;
-            if (z == 1)
-                dem1++;
-            else
-                dem2++;
-        }
+        int a, b;
+        cin >> a >> b;
 
-        if (((dem2 * 2) + dem1) % 2 == 0)
+        if (a <= 0)
         {
-            yep;
+            cout << 1 nl;
         }
-        else
-            nope;
+        else if (a > 0)
+        {
+            cout << a + b * 2 + 1 nl;
+        }
     }
 }

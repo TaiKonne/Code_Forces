@@ -2,8 +2,7 @@
 using namespace std;
 
 #define nl << '\n'
-#define vti vector<int>
-#define vtll vector<long long>
+#define vt vector<int>
 #define yep cout << "YES" nl
 #define nope cout << "NO" nl
 #define ll long long
@@ -20,26 +19,15 @@ using namespace std;
 int main()
 {
     int t;
+    cin >> t;
     while (t--)
     {
         int n;
         cin >> n;
-        int dem1 = 0, dem2 = 0;
-        while (n--)
+        for (int i = 1; i <= n; i++)
         {
-            int z;
-            cin >> z;
-            if (z == 1)
-                dem1++;
-            else
-                dem2++;
+            cout << 1 space;
         }
-
-        if (((dem2 * 2) + dem1) % 2 == 0)
-        {
-            yep;
-        }
-        else
-            nope;
+        cout nl;
     }
 }

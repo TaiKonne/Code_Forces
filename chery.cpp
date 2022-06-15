@@ -23,28 +23,22 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
+        ll n;
         cin >> n;
-        int dem1 = 0, dem2 = 0;
-        while (n--)
+        vtll a;
+        // for (auto &it : a)
+        //     cin >> a[it];
+        while(n--)
         {
             int z;
-            cin >> z;
-            if (z == 1)
-                dem1++;
-            else
-                dem2++;
+            cin>>z;
+            a.pb(z);
         }
-
-        if ((dem1 + 2 * dem2) % 2 != 0)
-            nope;
-        else
+        ll flag = 0;
+        for (ll i = 1; i < a.sz; i++)
         {
-            int s = (dem1 + 2 * dem2) / 2;
-            if (s % 2 == 0 || (s % 2 == 1 && dem1 != 0))
-                yep;
-            else
-                nope;
+            flag = max(flag, a[i] * a[i - 1]);
         }
+        cout << flag nl;
     }
 }

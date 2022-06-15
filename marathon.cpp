@@ -23,28 +23,17 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin >> n;
-        int dem1 = 0, dem2 = 0;
-        while (n--)
+        int a[5];
+        for (int i = 0; i < 4; i++)
         {
-            int z;
-            cin >> z;
-            if (z == 1)
-                dem1++;
-            else
-                dem2++;
+            cin >> a[i];
         }
-
-        if ((dem1 + 2 * dem2) % 2 != 0)
-            nope;
-        else
+        int dem = 0;
+        for (int i = 0; i < 4; i++)
         {
-            int s = (dem1 + 2 * dem2) / 2;
-            if (s % 2 == 0 || (s % 2 == 1 && dem1 != 0))
-                yep;
-            else
-                nope;
+            if (a[0] < a[i])
+                dem++;
         }
+        cout << dem nl;
     }
 }

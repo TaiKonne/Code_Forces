@@ -19,27 +19,18 @@ using namespace std;
 
 int main()
 {
-    int t;
-    while (t--)
+    int n, m;
+    cin >> n >> m;
+    int dem = 0;
+    for (int i = 0; i <= n; i++)
     {
-        int n;
-        cin >> n;
-        int dem1 = 0, dem2 = 0;
-        while (n--)
+        for (int j = 0; j <= m; j++)
         {
-            int z;
-            cin >> z;
-            if (z == 1)
-                dem1++;
-            else
-                dem2++;
+            if ((i * i + j) == n && (i + j * j) == m)
+            {
+                dem++;
+            }
         }
-
-        if (((dem2 * 2) + dem1) % 2 == 0)
-        {
-            yep;
-        }
-        else
-            nope;
     }
+    cout << dem;
 }

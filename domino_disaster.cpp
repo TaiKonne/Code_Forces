@@ -20,26 +20,29 @@ using namespace std;
 int main()
 {
     int t;
-    while (t--)
+    cin>>t;
+    while(t--)
     {
         int n;
-        cin >> n;
-        int dem1 = 0, dem2 = 0;
-        while (n--)
-        {
-            int z;
-            cin >> z;
-            if (z == 1)
-                dem1++;
-            else
-                dem2++;
-        }
+        cin>>n;
+        string a;
+        cin>>a;
 
-        if (((dem2 * 2) + dem1) % 2 == 0)
+        for(int i = 0;i<a.sz;i++)
         {
-            yep;
+            if(a[i]=='U')
+            {
+                cout<<'D';
+            }
+            else if(a[i]=='D')
+            {
+                cout<<'U';
+            }
+            else
+            {
+                cout<<a[i];
+            }
         }
-        else
-            nope;
+        cout nl;
     }
 }

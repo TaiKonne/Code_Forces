@@ -2,10 +2,9 @@
 using namespace std;
 
 #define nl << '\n'
-#define vti vector<int>
-#define vtll vector<long long>
-#define yep cout << "YES" nl
-#define nope cout << "NO" nl
+#define vt vector<int>
+#define yep cout << "YES" nl;
+#define nope cout << "NO" nl;
 #define ll long long
 #define lg long
 #define db double
@@ -16,3 +15,16 @@ using namespace std;
 #define red rend()
 #define sz size()
 #define space << " "
+
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n;
+        cin >> n;
+        cout << (n + 1) / 10 nl;
+    }
+    return 0;
+}

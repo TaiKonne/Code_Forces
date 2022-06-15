@@ -23,28 +23,13 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin >> n;
-        int dem1 = 0, dem2 = 0;
-        while (n--)
+        vti a;
+        for (int i = 0; i < 7; i++)
         {
             int z;
             cin >> z;
-            if (z == 1)
-                dem1++;
-            else
-                dem2++;
+            a.pb(z);
         }
-
-        if ((dem1 + 2 * dem2) % 2 != 0)
-            nope;
-        else
-        {
-            int s = (dem1 + 2 * dem2) / 2;
-            if (s % 2 == 0 || (s % 2 == 1 && dem1 != 0))
-                yep;
-            else
-                nope;
-        }
+        cout << a[0] space << a[1] space << a[6] - a[0] - a[1] nl;
     }
 }

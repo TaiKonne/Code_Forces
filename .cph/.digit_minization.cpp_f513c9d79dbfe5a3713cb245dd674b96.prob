@@ -1,0 +1,1 @@
+{"name":"Local: digit_minization","url":"c:\\Users\\Admin\\Desktop\\codeforces\\digit_minization.cpp","tests":[{"id":1656302939163,"input":"3\n12\n132\n487456398","output":"2\n1\n3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Admin\\Desktop\\codeforces\\digit_minization.cpp","group":"local","local":true}

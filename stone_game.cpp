@@ -2,11 +2,12 @@
 using namespace std;
 
 #define nl << '\n'
-#define vt vector<int>
+#define vti vector<int>
+#define vtll vector<long long>
 #define yep cout << "YES" nl
 #define nope cout << "NO" nl
 #define ll long long
-#define l long
+#define lg long
 #define db double
 #define pb push_back
 #define bg begin()
@@ -15,67 +16,47 @@ using namespace std;
 #define red rend()
 #define sz size()
 #define space << " "
+#define vtpi vector<pair<int, int>>
+#define pft first
+#define psc second
+#define fr(i, l, r) for (int i = l; i <= r; i++)
+#define fl(i, r, l) for (int i = r; i >= l; i--)
+#define wh while
+#define fat(x, a) for (auto &x : a)
+#define srt(x) sort(x.bg, x.ed)
+#define rsrt(x) sort(x.rbg, x.red)
+#define all(r) r.begin(), r.end()
+#define rall(r) r.rbegin(), e.rend()
+#define fast_out()                    \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL)
 
 int main()
 {
     int t;
     cin >> t;
-    while (t--)
+    wh(t--)
     {
         int n;
         cin >> n;
-        int a[1000];
-        int Max = 0, Min = 10001, vtmin = 0, vtmax = 0;
-        for (int i = 1; i <= n; i++)
-        {
-            cin >> a[i];
-            Max = max(Max, a[i]);
-            Min = min(Min, a[i]);
-        }
-        for (int i = 1; i <= n; i++)
-        {
-            if (Max == a[i])
-            {
-                vtmax = i;
-            }
-            else if (Min == a[i])
-            {
-                vtmin = i;
-            }
-        }
-        // sort(a.bg, a.ed);
-        int flag = n / 2, step = 0;
-        int flag1 = 0;
+        vti a(n);
+        fat(x, a) cin >> x;
+        int Min = *min_element(all(a));
+        int Max = *max_element(all(a));
 
-        if (flag < vtmax)
+        int mi = 0, ma = 0;
+        fr(i, 0, a.sz - 1)
         {
-            step = n - vtmax + 1;
-            flag1 = 1;
+            if (a[i] == Min)
+                mi = i;
+            if (a[i] == Max)
+                ma = i;
         }
-        else
-        {
-            step = vtmax;
-            flag1 = 2;
-        }
-        cout << step space;
 
-        int step1 = 0;
-        if (flag < vtmin)
-        {
-            step1 = n - vtmin + 1;
-            if (flag1 = 1)
-            {
-                cout << max(step1, step) nl;
-            }
-            else
-            {
-                
-            }
-        }
-        else
-        {
-            step1 = vtmin;
-        }
-        cout << step1 nl;
+        cout << min({max(mi, ma) + 1,
+                     (n - 1) - min(mi, ma) + 1,
+                     (n - 1) - ma + mi + 2,
+                     (n - 1) - mi + ma + 2});
+        cout nl;
     }
 }

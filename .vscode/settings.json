@@ -6,6 +6,8 @@
         "array": "cpp",
         "bitset": "cpp",
         "regex": "cpp",
-        "utility": "cpp"
-    }
+        "utility": "cpp",
+        "define": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }

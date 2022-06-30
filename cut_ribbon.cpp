@@ -1,52 +1,50 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define nl << '\n'
+#define vti vector<int>
+#define vtll vector<long long>
+#define yep cout << "YES" nl
+#define nope cout << "NO" nl
+#define ll long long
+#define lg long
+#define db double
+#define pb push_back
+#define bg begin()
+#define ed end()
+#define rbg rbegin()
+#define red rend()
+#define sz size()
+#define space << " "
+#define vtpi vector<pair<int, int>>
+#define pft first
+#define psc second
+#define fr(i, l, r) for (int i = l; i <= r; i++)
+#define fl(i, r, l) for (int i = r; i >= l; i--)
+#define wh while
+#define fat(x, a) for (auto &x : a)
+#define srt(x) sort(x.bg, x.ed)
+#define rsrt(x) sort(x.rbg, x.red)
+#define all(r) r.begin(), r.end()
+#define rall(r) r.rbegin(), e.rend()
+#define fast_out()                    \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL)
+
 int main()
 {
-    int n;
-    cin >> n;
-    vector<int> a;
-    int i = 3;
+    int n, a, b, c;
+    cin >> n >> a >> b >> c;
+    int cnt = 0;
 
-    while (i--)
+    fr(i,0,n)
     {
-        int t;
-        cin >> t;
-        a.push_back(t);
-    }
-
-    sort(a.begin(), a.end());
-    if (a[0] == 1)
-    {
-        cout << n;
-        return 0;
-    }
-    else if (n % 2 == 0 && a[0] % 2 != 0)
-    {
-        cout << n / a[0];
-        return 0;
-    }
-    int s = 0, dem = 0;
-    for (int i = 0; i < a.size(); i++)
-    {
-        if (s != n)
+        fr(j,i+1,n)
         {
-            if (s < n)
+            fr(l,j+1,n)
             {
-                s += a[i];
-                dem++;
-            }
-            else if (s > n)
-            {
-                i = 0;
-                s -= a[i];
+                if()
             }
         }
-        else if (s == n)
-        {
-            cout << dem;
-            return 0;
-        }
     }
-    // cout << dem;
 }

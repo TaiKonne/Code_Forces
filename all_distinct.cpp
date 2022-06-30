@@ -16,53 +16,36 @@ using namespace std;
 #define red rend()
 #define sz size()
 #define space << " "
+#define vtpi vector<pair<int, int>>
+#define pft first
+#define psc second
+#define fr(i, l, r) for (int i = l; i <= r; i++)
+#define fl(i, r, l) for (int i = r; i >= l; i--)
+#define wh while
+#define fat(x, a) for (auto &x : a)
+#define srt(x) sort(x.bg, x.ed)
+#define rsrt(x) sort(x.rbg, x.red)
+#define all(r) r.bg(),r.ed()
 
 int main()
 {
     int t;
     cin >> t;
-    while (t--)
+    wh(t--)
     {
         int n;
         cin >> n;
-        vti a;
-        vti b(10001);
-        int m = 0;
-        while (n--)
+        vti a(n);
+        set<int> b;
+        fat(x, a)
         {
-            int z;
-            cin >> z;
-            a.pb(z);
+            cin >> x;
+            b.insert(x);
         }
-        sort(a.bg, a.ed);
-        for (int i = 0; i < a.sz; i++)
-        {
-            b[a[i]]++;
-        }
-        int i = 0, flag = 0;
-        sort(b.rbg, b.red);
 
-        int flag1 = 0;
-        int flag3 = 0;
-
-        for (int i = 0; i < b.sz; i++)
-        {
-            if (b[i] % 2 == 0 && b[i] != 0)
-                flag1++;
-            else if (b[i] % 2 != 0 && b[i] != 0)
-                flag3++;
-        }
-        if (flag1 == 0 || flag3 == 0)
-        {
-            cout << flag1 + flag3 nl;
-        }
-        else if (flag1  flag3)
-        {
-            cout << abs(flag1 - flag3) nl;
-        }
-        else if (flag1 == flag3)
-        {
-            
-        }
+        if ((n - b.sz) % 2 == 0)
+            cout << b.sz nl;
+        else
+            cout << b.sz - 1 nl;
     }
 }

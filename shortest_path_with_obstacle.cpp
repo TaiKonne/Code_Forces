@@ -1,0 +1,54 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define nl << '\n'
+#define vti vector<int>
+#define vtll vector<long long>
+#define yep cout << "YES" nl
+#define nope cout << "NO" nl
+#define ll long long
+#define lg long
+#define db double
+#define pb push_back
+#define bg begin()
+#define ed end()
+#define rbg rbegin()
+#define red rend()
+#define sz size()
+#define space << " "
+#define vtpi vector<pair<int, int>>
+#define pft first
+#define psc second
+#define fr(i, l, r) for (int i = l; i <= r; i++)
+#define fl(i, r, l) for (int i = r; i >= l; i--)
+#define wh while
+#define fat(x, a) for (auto &x : a)
+#define srt(x) sort(x.bg, x.ed)
+#define rsrt(x) sort(x.rbg, x.red)
+#define all(r) r.begin(), r.end()
+#define rall(r) r.rbegin(), e.rend()
+#define fast_out()                    \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL)
+
+int main()
+{
+    int t;
+    cin >> t;
+    wh(t--)
+    {
+        int a1, a2, b1, b2, c1, c2;
+        cin >> a1 >> a2 >> b1 >> b2 >> c1 >> c2;
+        int cnt = abs(a1 - b1) + abs(a2 - b2);
+
+        if (a1 == b1 && a1 == c1 && c2 > min(a2, b2) && c2 < max(a2, b2))
+        {
+            cnt += 2;
+        }
+        if (a2 == c2 && a2 == b2 && c1 < max(a1, b1) && c1 > min(a1, b1))
+        {
+            cnt += 2;
+        }
+        cout << cnt nl;
+    }
+}

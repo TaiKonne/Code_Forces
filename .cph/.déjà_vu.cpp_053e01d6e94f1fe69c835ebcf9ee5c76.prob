@@ -1,0 +1,1 @@
+{"name":"Local: déjà_vu","url":"c:\\Users\\Admin\\Desktop\\codeforces\\déjà_vu.cpp","tests":[{"id":1655611717619,"input":"6\ncbabc\nab\nzza\nba\na\nnutforajaroftuna","output":"YES\nYES\nYES\nYES\nNO\nYES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Admin\\Desktop\\codeforces\\déjà_vu.cpp","group":"local","local":true}

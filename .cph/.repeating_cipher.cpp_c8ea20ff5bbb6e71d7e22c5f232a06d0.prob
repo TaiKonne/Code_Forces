@@ -1,0 +1,1 @@
+{"name":"Local: repeating_cipher","url":"c:\\Users\\Admin\\Desktop\\codeforces\\repeating_cipher.cpp","tests":[{"id":1656675077949,"input":"6\nbaabbb","output":""},{"id":1656675355692,"input":"10\nooopppssss","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Admin\\Desktop\\codeforces\\repeating_cipher.cpp","group":"local","local":true}

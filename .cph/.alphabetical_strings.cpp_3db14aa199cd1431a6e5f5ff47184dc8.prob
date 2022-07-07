@@ -1,0 +1,1 @@
+{"name":"Local: alphabetical_strings","url":"c:\\Users\\Admin\\Desktop\\codeforces\\alphabetical_strings.cpp","tests":[{"id":1657029316945,"input":"11\na\nba\nab\nbac\nihfcbadeg\nz\naa\nca\nacb\nxyz\nddcba","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Admin\\Desktop\\codeforces\\alphabetical_strings.cpp","group":"local","local":true}

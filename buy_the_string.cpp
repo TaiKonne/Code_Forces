@@ -26,6 +26,10 @@ using namespace std;
 #define srt(x) sort(x.bg, x.ed)
 #define rsrt(x) sort(x.rbg, x.red)
 #define all(r) r.begin(), r.end()
+#define rall(r) r.rbegin(), e.rend()
+#define fast_out()                    \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL)
 
 int main()
 {
@@ -33,24 +37,20 @@ int main()
     cin >> t;
     wh(t--)
     {
-        int n;
-        cin >> n;
-        set<string> b;
+        int n, c0, c1, h;
+        cin >> n >> c0 >> c1 >> h;
+        // n số lượng đồng xu
+        // c0 số tiền trả 0
+        // c1 số tiền trả 1
+        // h mỗi lần thay đổi
+        string a;
+        cin >> a;
+        int cnt1 = count(all(a), '1');
+        int cnt = count(all(a), '0');
 
-        fr(i, 1,n)
-        {
-            string a;
-            cin >> a;
-            b.insert(a);
-            a.clear();
-        }
-
-        fr(i,0,b.sz-1)
-        {
-            cout<<b[i] space;
-        }
-
+        cout << min({((cnt1 * h) + (n * c0)),
+                     ((cnt * h) + (n * c1)),
+                     ((cnt * c0) + (cnt1 * c1))});
         cout nl;
-        b.clear();
     }
 }

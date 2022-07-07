@@ -33,26 +33,61 @@ using namespace std;
 
 int main()
 {
-    int n;
-    cin >> n;
-    int a[5001];
+    int n, m;
+    cin >> n >> m;
+    char a[n + 1][m + 1];
 
-    fr(i,1,n)
-    {
-        cin>>a[i];
-    }
-    int flag = 0;
     fr(i, 1, n)
     {
-        if (a[a[a[i]]] == i)
+        fr(j, 1, m)
         {
-            flag = 1;
-            break;
+            cin >> a[i][j];
         }
     }
 
-    if (flag == 1)
-        yep;
-    else
-        nope;
+    int cnt = 0;
+    fr(i, 1, n)
+    {
+        cnt = 0;
+        fr(j, 1, m)
+        {
+            if (a[i][j] == '.')
+                cnt++;
+        }
+        if (cnt == m)
+        {
+            fr(j, 1, m)
+            {
+                a[i][j] = '0';
+            }
+        }
+    }
+
+    int cnt1 = 0;
+    fr(i, 1, m)
+    {
+        cnt1 = 0;
+        fr(j, 1, n)
+        {
+            if (a[j][i] == '.' || a[j][i] == '0')
+                cnt1++;
+        }
+        if (cnt1 == n)
+        {
+            fr(j, 1, n)
+            {
+                a[j][i] = '0';
+            }
+        }
+    }
+    int cnt2 = 0;
+    fr(i, 1, n)
+    {
+        fr(j, 1, m)
+        {
+            if (a[i][j] == '0')
+                cnt2++;
+        }
+    }
+    cout << cnt2;
 }

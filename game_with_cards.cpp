@@ -26,6 +26,10 @@ using namespace std;
 #define srt(x) sort(x.bg, x.ed)
 #define rsrt(x) sort(x.rbg, x.red)
 #define all(r) r.begin(), r.end()
+#define rall(r) r.rbegin(), e.rend()
+#define fast_out()                    \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL)
 
 int main()
 {
@@ -33,24 +37,34 @@ int main()
     cin >> t;
     wh(t--)
     {
-        int n;
+        int n, m;
         cin >> n;
-        set<string> b;
 
-        fr(i, 1,n)
+        vti a(n);
+        fat(x, a) cin >> x;
+        cin >> m;
+        vti b(m);
+        fat(z, b) cin >> z;
+
+        int alice = *max_element(all(a));
+        int bob = *max_element(all(b));
+
+        if (bob > alice)
         {
-            string a;
-            cin >> a;
-            b.insert(a);
-            a.clear();
+            cout << "Bob" nl;
+            cout << "Bob" nl;
+        }
+        else if (bob < alice)
+        {
+            cout << "Alice" nl;
+            cout << "Alice" nl;
+        }
+        else
+        {
+            cout<<"Alice" nl;
+            cout<<"Bob" nl;
         }
 
-        fr(i,0,b.sz-1)
-        {
-            cout<<b[i] space;
-        }
-
-        cout nl;
-        b.clear();
+        // cout nl;
     }
 }

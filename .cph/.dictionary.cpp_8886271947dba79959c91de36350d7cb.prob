@@ -1,0 +1,1 @@
+{"name":"Local: dictionary","url":"c:\\Users\\Admin\\Desktop\\codeforces\\dictionary.cpp","tests":[{"id":1656739141922,"input":"7\nab\nac\naz\nba\nbc\nzx\nzy\n","output":"1\n2\n25\n26\n27\n649\n650"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Admin\\Desktop\\codeforces\\dictionary.cpp","group":"local","local":true}

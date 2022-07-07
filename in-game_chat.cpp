@@ -26,6 +26,10 @@ using namespace std;
 #define srt(x) sort(x.bg, x.ed)
 #define rsrt(x) sort(x.rbg, x.red)
 #define all(r) r.begin(), r.end()
+#define rall(r) r.rbegin(), e.rend()
+#define fast_out()                    \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL)
 
 int main()
 {
@@ -35,22 +39,26 @@ int main()
     {
         int n;
         cin >> n;
-        set<string> b;
-
-        fr(i, 1,n)
+        string a;
+        cin >> a;
+        // int fl1 = n / 2;
+        int cnt = 0, cnt1 = 0;
+        fl(i, a.sz - 1, 0)
         {
-            string a;
-            cin >> a;
-            b.insert(a);
-            a.clear();
+            if (a[i] == ')')
+                cnt++;
+            else
+            {
+                break;
+            }
         }
 
-        fr(i,0,b.sz-1)
-        {
-            cout<<b[i] space;
-        }
+        // fr(i, 0, cnt - 1)
+        // {
+        //     if (a[i] == ')')
+        //         cnt1++;
+        // }
 
-        cout nl;
-        b.clear();
+        cout << ((cnt <= n / 2) ? "NO\n" : "YES\n");
     }
 }

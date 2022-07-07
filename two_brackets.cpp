@@ -33,26 +33,39 @@ using namespace std;
 
 int main()
 {
-    int n;
-    cin >> n;
-    int a[5001];
-
-    fr(i,1,n)
+    int t;
+    cin >> t;
+    wh(t--)
     {
-        cin>>a[i];
-    }
-    int flag = 0;
-    fr(i, 1, n)
-    {
-        if (a[a[a[i]]] == i)
+        string a;
+        cin >> a;
+        int a1 = 0, a2 = 0, b1 = 0, b2 = 0;
+        int flag = 0;
+        int n = (a.sz - 1) / 2;
+        int cnt1 = 0, cnt2 = 0;
+        fr(i, 0, a.sz - 1)
         {
-            flag = 1;
-            break;
+            if (a[i] == '(')
+                a1++;
+            else if (a[i] == ')')
+            {
+                if (a1 > 0)
+                {
+                    a1--;
+                    cnt1++;
+                }
+            }
+            if (a[i] == '[')
+                b1++;
+            else if (a[i] == ']')
+            {
+                if (b1 > 0)
+                {
+                    b1--;
+                    cnt2++;
+                }
+            }
         }
+        cout << cnt1 + cnt2 nl;
     }
-
-    if (flag == 1)
-        yep;
-    else
-        nope;
 }

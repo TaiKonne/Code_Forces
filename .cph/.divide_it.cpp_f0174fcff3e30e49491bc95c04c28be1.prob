@@ -1,0 +1,1 @@
+{"name":"Local: divide_it","url":"c:\\Users\\Admin\\Desktop\\codeforces\\divide_it.cpp","tests":[{"id":1656676593819,"input":"7\n1\n10\n25\n30\n14\n27\n1000000000000000000","output":"0\n4\n6\n6\n-1\n6\n72"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Admin\\Desktop\\codeforces\\divide_it.cpp","group":"local","local":true}

@@ -26,31 +26,30 @@ using namespace std;
 #define srt(x) sort(x.bg, x.ed)
 #define rsrt(x) sort(x.rbg, x.red)
 #define all(r) r.begin(), r.end()
+#define rall(r) r.rbegin(), e.rend()
+#define fast_out()                    \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL)
 
 int main()
 {
     int t;
     cin >> t;
-    wh(t--)
+    wh (t--)
     {
-        int n;
-        cin >> n;
-        set<string> b;
-
-        fr(i, 1,n)
+        ll p, a, b, c;
+        cin >> p >> a >> b >> c;
+        ll x, y, z;
+        x = a - p % a;
+        y = b - p % b;
+        z = c - p % c;
+        if (p % a == 0 || p % b == 0 || p % c == 0)
         {
-            string a;
-            cin >> a;
-            b.insert(a);
-            a.clear();
+            cout << "0" nl;
         }
-
-        fr(i,0,b.sz-1)
+        else
         {
-            cout<<b[i] space;
+            cout << min(x, min(y, z)) nl;
         }
-
-        cout nl;
-        b.clear();
     }
 }

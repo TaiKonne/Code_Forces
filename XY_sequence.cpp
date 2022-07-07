@@ -26,6 +26,10 @@ using namespace std;
 #define srt(x) sort(x.bg, x.ed)
 #define rsrt(x) sort(x.rbg, x.red)
 #define all(r) r.begin(), r.end()
+#define rall(r) r.rbegin(), e.rend()
+#define fast_out()                    \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL)
 
 int main()
 {
@@ -33,24 +37,26 @@ int main()
     cin >> t;
     wh(t--)
     {
-        int n;
-        cin >> n;
-        set<string> b;
+        int n, b, x, y;
+        cin >> n >> b >> x >> y;
 
-        fr(i, 1,n)
+        int a[200001];
+        int c[200001];
+        ll s = 0;
+        ll s1=0;
+        wh(n--)
         {
-            string a;
-            cin >> a;
-            b.insert(a);
-            a.clear();
+            if (s + x <= b)
+            {
+                s += x;
+            }
+            else
+            {
+                s -= y;
+            }
+            s1+=s;
         }
 
-        fr(i,0,b.sz-1)
-        {
-            cout<<b[i] space;
-        }
-
-        cout nl;
-        b.clear();
+        cout << s1 nl;
     }
 }

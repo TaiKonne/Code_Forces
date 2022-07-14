@@ -33,32 +33,19 @@ using namespace std;
 
 int main()
 {
-    fast_out();
     int t;
     cin >> t;
     wh(t--)
     {
-        ll n, h;
-        cin >> n >> h;
-
-        vtll a(n);
-        fat(x, a) cin >> x;
-        sort(all(a));
-        int vt1 = a[a.sz - 1], vt2 = a[a.sz - 2];
-        int s = vt1 + vt2;
-
-        if (h % s == 0)
+        ll n;
+        cin >> n;
+        string a = to_string(n);
+        ll s = 1;
+        fr(i, 1, a.sz - 1)
         {
-            cout << 2 * (h / s) nl;
+            s *= 10;
         }
-        else if (h % s <= vt1)
-        {
-            cout << 2 * (h / s) + 1 nl;
-        }
-        else
-        {
-            cout << 2 * (h / s) + 2 nl;
-        }
-        // cout << cnt nl;
+        // cout << s nl;
+        cout << n - s nl;
     }
 }

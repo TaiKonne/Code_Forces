@@ -33,32 +33,20 @@ using namespace std;
 
 int main()
 {
-    fast_out();
     int t;
     cin >> t;
     wh(t--)
     {
-        ll n, h;
-        cin >> n >> h;
-
-        vtll a(n);
+        int n;
+        cin >> n;
+        vti a(n * 2);
         fat(x, a) cin >> x;
         sort(all(a));
-        int vt1 = a[a.sz - 1], vt2 = a[a.sz - 2];
-        int s = vt1 + vt2;
 
-        if (h % s == 0)
+        fr(i,0,n-1)
         {
-            cout << 2 * (h / s) nl;
+            cout<<a[i] space << a[n+i] space;
         }
-        else if (h % s <= vt1)
-        {
-            cout << 2 * (h / s) + 1 nl;
-        }
-        else
-        {
-            cout << 2 * (h / s) + 2 nl;
-        }
-        // cout << cnt nl;
+        cout nl;
     }
 }

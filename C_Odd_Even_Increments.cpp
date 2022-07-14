@@ -38,27 +38,39 @@ int main()
     cin >> t;
     wh(t--)
     {
-        ll n, h;
-        cin >> n >> h;
+        int n;
+        cin >> n;
+        vti a(n + 1);
 
-        vtll a(n);
-        fat(x, a) cin >> x;
-        sort(all(a));
-        int vt1 = a[a.sz - 1], vt2 = a[a.sz - 2];
-        int s = vt1 + vt2;
+        fr(i, 1, n)
+        {
+            cin >> a[i];
+        }
+        int f1 = 0, f2 = 0, f3 = 0, f4 = 0;
+        fr(i, 1, n)
+        {
+            if (i % 2 == 0)
+            {
+                if (a[i] % 2 == 1)
+                    f1 = 1;
+                else
+                    f2 = 1;
+            }
+            else
+            {
+                if (a[i] % 2 == 1)
+                    f3 = 1;
+                else
+                    f4 = 1;
+            }
+        }
 
-        if (h % s == 0)
-        {
-            cout << 2 * (h / s) nl;
-        }
-        else if (h % s <= vt1)
-        {
-            cout << 2 * (h / s) + 1 nl;
-        }
+        if (f1 && f2)
+            nope;
+        else if (f3 && f4)
+            nope;
         else
-        {
-            cout << 2 * (h / s) + 2 nl;
-        }
-        // cout << cnt nl;
+            yep;
+        // cout nl;
     }
 }

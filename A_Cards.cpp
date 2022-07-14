@@ -33,32 +33,41 @@ using namespace std;
 
 int main()
 {
-    fast_out();
-    int t;
-    cin >> t;
-    wh(t--)
+    double n, s = 0;
+    cin >> n;
+    vti a(n);
+    fat(x, a)
     {
-        ll n, h;
-        cin >> n >> h;
-
-        vtll a(n);
-        fat(x, a) cin >> x;
-        sort(all(a));
-        int vt1 = a[a.sz - 1], vt2 = a[a.sz - 2];
-        int s = vt1 + vt2;
-
-        if (h % s == 0)
-        {
-            cout << 2 * (h / s) nl;
-        }
-        else if (h % s <= vt1)
-        {
-            cout << 2 * (h / s) + 1 nl;
-        }
-        else
-        {
-            cout << 2 * (h / s) + 2 nl;
-        }
-        // cout << cnt nl;
+        cin >> x;
+        s += x;
     }
+    double avg = (s / n) * 2;
+    if (n == 2)
+    {
+        cout << 1 space << 2;
+        return 0;
+    }
+    fr(i, 0, a.sz - 1)
+    {
+        if (a[i] != -1)
+        {
+            fr(j, 0, a.sz - 1)
+            {
+                if (a[i] + a[j] == avg && i != j)
+                {
+                    cout << i + 1 space << j + 1 nl;
+                    a[i] = -1;
+                    a[j] = -1;
+                }
+            }
+        }
+    }
+    // 1 5 7 4 4 3
+    // 6 8 5 5 4
+    // 6 12 9 9 8
+    // 8 12 11 11 10
+    // 5 9 11 8 7
+    // 5 9 11 8 7
+    // 4 8 10 7 7
+    // ==> 8
 }

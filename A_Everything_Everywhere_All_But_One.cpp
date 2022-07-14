@@ -33,32 +33,25 @@ using namespace std;
 
 int main()
 {
-    fast_out();
     int t;
     cin >> t;
     wh(t--)
     {
-        ll n, h;
-        cin >> n >> h;
-
-        vtll a(n);
-        fat(x, a) cin >> x;
-        sort(all(a));
-        int vt1 = a[a.sz - 1], vt2 = a[a.sz - 2];
-        int s = vt1 + vt2;
-
-        if (h % s == 0)
+        int n;
+        cin >> n;
+        map<double, int> con_cac_ne;
+        double avg = 0;
+        fr(i, 0, n - 1)
         {
-            cout << 2 * (h / s) nl;
+            int z;
+            cin >> z;
+            con_cac_ne[z]++;
+            avg += z;
         }
-        else if (h % s <= vt1)
-        {
-            cout << 2 * (h / s) + 1 nl;
-        }
+
+        if (con_cac_ne[avg / n] == 0)
+            nope;
         else
-        {
-            cout << 2 * (h / s) + 2 nl;
-        }
-        // cout << cnt nl;
+            yep;
     }
 }

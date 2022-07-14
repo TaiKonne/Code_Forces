@@ -31,34 +31,59 @@ using namespace std;
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL)
 
+void solve()
+{
+    string a;
+    cin >> a;
+    if (a.sz == 1)
+    {
+        cout << a[0];
+        return;
+    }
+    else if (a.sz % 2 == 0)
+    {
+        int n = (a.sz / 2) - 1;
+        int m = n + 1;
+        fl(i, n, 0)
+        {
+            cout << a[i] << a[m];
+            m++;
+        }
+    }
+    else if (a.sz % 2 != 0)
+    {
+        int k = a.sz / 2;
+        int x = k;
+        int y = k + 1;
+        string b = "";
+        fr(i, 0, k)
+        {
+            if (a[x] <= 122 && a[x] >= 97)
+            {
+                b+=a[x];
+            }
+            x--;
+
+            if (a[y] <= 122 && a[y] >= 97)
+            {
+                b+=a[y];
+            }
+
+            y++;
+        }
+        fr(i,0,b.sz-1)
+        {
+            cout<<b[i];
+        }
+    }
+    return;
+    // ncteho
+    // 3 4 2 5 1 6
+    // teagh
+    // ageht
+}
+
 int main()
 {
-    fast_out();
-    int t;
-    cin >> t;
-    wh(t--)
-    {
-        ll n, h;
-        cin >> n >> h;
-
-        vtll a(n);
-        fat(x, a) cin >> x;
-        sort(all(a));
-        int vt1 = a[a.sz - 1], vt2 = a[a.sz - 2];
-        int s = vt1 + vt2;
-
-        if (h % s == 0)
-        {
-            cout << 2 * (h / s) nl;
-        }
-        else if (h % s <= vt1)
-        {
-            cout << 2 * (h / s) + 1 nl;
-        }
-        else
-        {
-            cout << 2 * (h / s) + 2 nl;
-        }
-        // cout << cnt nl;
-    }
+    solve();
 }

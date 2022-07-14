@@ -38,27 +38,21 @@ int main()
     cin >> t;
     wh(t--)
     {
-        ll n, h;
-        cin >> n >> h;
+        string a;
+        cin >> a;
+        set<char> b;
 
-        vtll a(n);
-        fat(x, a) cin >> x;
-        sort(all(a));
-        int vt1 = a[a.sz - 1], vt2 = a[a.sz - 2];
-        int s = vt1 + vt2;
-
-        if (h % s == 0)
+        int cnt = 0;
+        fr(i, 0, a.sz - 1)
         {
-            cout << 2 * (h / s) nl;
+            b.insert(a[i]);
+            if (b.sz == 4)
+            {
+                cnt++;
+                b.clear();
+                b.insert(a[i]);
+            }
         }
-        else if (h % s <= vt1)
-        {
-            cout << 2 * (h / s) + 1 nl;
-        }
-        else
-        {
-            cout << 2 * (h / s) + 2 nl;
-        }
-        // cout << cnt nl;
+        cout << cnt + 1 nl;
     }
 }

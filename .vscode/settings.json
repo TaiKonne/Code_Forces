@@ -7,7 +7,10 @@
         "bitset": "cpp",
         "regex": "cpp",
         "utility": "cpp",
-        "define": "cpp"
+        "define": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

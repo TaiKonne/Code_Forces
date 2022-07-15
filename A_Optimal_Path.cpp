@@ -31,32 +31,13 @@ using namespace std;
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL)
 
-void solve()
-{
-    int n;
-    cin >> n;
-    string s;
-    string a;
-    cin >> s;
-    fr(i, 1, n - 3)
-    {
-        cin >> a;
-        if (s[s.sz - 1] == a[0])
-            s += a[1];
-        else
-            s += a;
-    }
-    if (s.sz < n)
-        s += 'b';
-    cout << s nl;
-}
-
 int main()
 {
-    int t;
+    ll t, n, m;
     cin >> t;
     wh(t--)
     {
-        solve();
+        cin >> n >> m;
+        cout << m * (n * n + n + m - 1) / 2 nl;
     }
 }

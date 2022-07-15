@@ -33,26 +33,35 @@ using namespace std;
 
 void solve()
 {
-    int n;
-    cin >> n;
-    string s;
     string a;
-    cin >> s;
-    fr(i, 1, n - 3)
+    cin >> a;
+    int cnt = a.find("po");
+    int cnt1 = a.find("desu");
+    int cnt11 = a.find("masu");
+    int cnt2 = a.find("mnida");
+    int Max = max({cnt, cnt1, cnt11, cnt2});
+
+    if ((cnt1 != -1 || cnt11 != -1) && (Max == cnt1 || Max == cnt11))
     {
-        cin >> a;
-        if (s[s.sz - 1] == a[0])
-            s += a[1];
-        else
-            s += a;
+        cout << "JAPANESE";
     }
-    if (s.sz < n)
-        s += 'b';
-    cout << s nl;
+    else if (cnt != -1 && Max == cnt)
+    {
+        cout << "FILIPINO";
+    }
+    else
+    {
+        cout << "KOREAN";
+    }
+    cout nl;
 }
 
 int main()
 {
+    // "po" FILIPINO
+    // "DESU" OR "MASU" JAPANESE
+    // "MNIDA" KOREAN
+
     int t;
     cin >> t;
     wh(t--)

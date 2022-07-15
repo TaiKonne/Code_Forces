@@ -31,36 +31,58 @@ using namespace std;
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL)
 
+void solve()
+{
+    int n;
+    cin >> n;
+    ll s = 0;
+    vtll a(n);
+
+    fr(i, 0, a.sz - 1)
+    {
+        cin >> a[i];
+        s += a[i];
+    }
+
+    ll cnt = 0;
+    int fl = 0;
+    int cnt1 = 0;
+    wh(true)
+    {
+        if (cnt1 == n - 1)
+        {
+            cout << cnt nl;
+            return;
+        }
+        cnt++;
+        fl(i, a.sz - 1, 1)
+        {
+            a[i]++;
+            a[i - 1]--;
+            cnt++;
+
+            if (a[i] == 0)
+            {
+                cnt1++;
+            }
+            break;
+        }
+    }
+
+    // fr(i, 0, a.sz - 1)
+    // {
+    //     cout << a[i] space;
+    // }
+    // cout << cnt nl;
+}
+
 int main()
 {
+    fast_out();
     int t;
     cin >> t;
     wh(t--)
     {
-        int n;
-        cin >> n;
-        int m = n;
-        int fl = 0;
-        wh(n--)
-        {
-            if (fl ^ n < 0)
-            {
-                cout << fl space;
-                break;
-            }
-            fl = fl ^ n;
-        }
-
-        int bit = 0;
-        wh(m--)
-        {
-            if (bit & m < 0)
-            {
-                cout << bit nl;
-                break;
-            }
-            bit = bit & m;
-        }
-        cout nl;
+        solve();
     }
 }

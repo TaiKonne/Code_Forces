@@ -25,19 +25,62 @@ using namespace std;
 #define fat(x, a) for (auto &x : a)
 #define srt(x) sort(x.bg, x.ed)
 #define rsrt(x) sort(x.rbg, x.red)
-#define all(r) r.bg(), r.ed()
+#define all(r) r.begin(), r.end()
+#define rall(r) r.rbegin(), e.rend()
+#define fast_out()                    \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL)
 
-int main()
+void solve()
 {
     int n;
     cin >> n;
-    int s = ((n - 1) * 2 + 1) * ((n - 1) * 2 + 1);
-    if (n % 2 == 0)
+    vti a(n);
+    int s = 0;
+    fr(i,0,n-1)
     {
-        cout << s - ((n - 1) * n) * 2;
+    	int x;
+    	cin>>x;
+        a.pb(x);
+        s += x;
     }
-    else
+
+    int cnt = 0;
+    int s1=a[a.sz-1];
+    s -=s1;
+    int fl = 0;
+    wh(true)
     {
-        cout << s - (n * (n - 1))*2;
+        cnt++;
+        fr(i, 0, a.sz - 1)
+        {
+            if (a[i]>0)
+            {
+                a[i] -= 1;
+                a[i + 1]++;
+                break;
+            }
+            if (a[a.sz - 1] == s)
+            {
+                // cout << cnt nl;
+                break;
+            }
+        }
+        if (a[a.sz - 1] == s)
+        {
+            cout << cnt-s1 nl;
+            break;
+        }
+    }
+}
+
+int main()
+{
+	fast_out();
+    int t;
+    cin >> t;
+    wh(t--)
+    {
+        solve();
     }
 }

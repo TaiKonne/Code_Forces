@@ -37,30 +37,8 @@ int main()
     cin >> t;
     wh(t--)
     {
-        int n;
-        cin >> n;
-        int m = n;
-        int fl = 0;
-        wh(n--)
-        {
-            if (fl ^ n < 0)
-            {
-                cout << fl space;
-                break;
-            }
-            fl = fl ^ n;
-        }
-
-        int bit = 0;
-        wh(m--)
-        {
-            if (bit & m < 0)
-            {
-                cout << bit nl;
-                break;
-            }
-            bit = bit & m;
-        }
-        cout nl;
+        int a, b, c, d;
+        cin >> a >> b >> c >> d;
+        
     }
 }

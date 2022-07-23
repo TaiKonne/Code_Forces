@@ -23,8 +23,6 @@ using namespace std;
 #define fl(i, r, l) for (int i = r; i >= l; i--)
 #define wh while
 #define fat(x, a) for (auto &x : a)
-#define srt(x) sort(x.bg, x.ed)
-#define rsrt(x) sort(x.rbg, x.red)
 #define all(r) r.begin(), r.end()
 #define rall(r) r.rbegin(), e.rend()
 #define fast_out()                    \
@@ -33,24 +31,20 @@ using namespace std;
 
 int main()
 {
-    int t;
-    cin >> t;
-    wh(t--)
+    int n, m;
+    cin >> n >> m;
+    vti a(n);
+    fat(x, a) cin >> x;
+    sort(all(a));
+    int cnt = 0;
+    fl(i, a.sz - 1, 0)
     {
-        ll n, m;
-        cin >> n;
-        vtll a(n);
-        fat(x, a) cin >> x;
-
-        cin >> m;
-        vtll b(m);
-        ll s = 0;
-        fr(i, 0, m - 1)
+        m -= a[i];
+        cnt++;
+        if (m <= 0)
         {
-            cin >> b[i];
-            s += b[i];
+            cout << cnt;
+            return 0;
         }
-        ll fl = s % n;
-        cout << a[fl] nl;
     }
 }

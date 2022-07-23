@@ -28,7 +28,7 @@ using namespace std;
 #define fast_out()                    \
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL)
-
+    
 void solve()
 {
     int n, m;
@@ -61,6 +61,7 @@ void solve()
 
     cout << s nl;
 }
+
 
 int main()
 {

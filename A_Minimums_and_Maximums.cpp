@@ -39,6 +39,13 @@ int main()
     {
         int a, b, c, d;
         cin >> a >> b >> c >> d;
-        
+        if (c > b || a > d)
+        {
+            cout << c + a nl;
+        }
+        else
+        {
+            cout << max(a, c) nl;
+        }
     }
 }

@@ -10,7 +10,14 @@
         "define": "cpp",
         "deque": "cpp",
         "string": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "a_game_2": "c",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "iomanip": "cpp",
+        "random": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

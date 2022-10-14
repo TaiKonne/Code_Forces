@@ -16,15 +16,12 @@ using namespace std;
 #define red rend()
 #define sz size()
 #define space << " "
-#define vtpi vector<pair<int, int>>
-#define pft first
-#define psc second
 #define fr(i, l, r) for (int i = l; i <= r; i++)
 #define fl(i, r, l) for (int i = r; i >= l; i--)
 #define wh while
 #define fat(x, a) for (auto &x : a)
 #define all(r) r.begin(), r.end()
-#define rall(r) r.rbegin(), e.rend()
+#define rall(r) r.rbegin(), r.rend()
 #define fast_out()                    \
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL)
@@ -33,15 +30,29 @@ void solve()
 {
     string a;
     cin >> a;
-    
+
+    map<char, int> b;
+    fr(i, 0, a.sz - 1)
+    {
+        b[a[i]]++;
+    }
+    fr(i, 0, a.sz - 1)
+    {
+        // --b[a[i]];
+        if (--b[a[i]] == 0)
+        {
+            cout << a.substr(i) nl;
+            break;
+        }
+    }
 }
 
 int main()
 {
     fast_out();
     int t;
-    cin>>t;
-    while(t--)
+    cin >> t;
+    while (t--)
     {
         solve();
     }

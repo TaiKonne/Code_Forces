@@ -15,112 +15,188 @@ using namespace std;
 #define rbg rbegin()
 #define red rend()
 #define sz size()
-#define space << " "
-#define vtpi vector<pair<int, int>>
-#define pft first
-#define psc second
+#define sp << " "
 #define fr(i, l, r) for (int i = l; i <= r; i++)
 #define fl(i, r, l) for (int i = r; i >= l; i--)
 #define wh while
 #define fat(x, a) for (auto &x : a)
+#define srt(x) sort(x.bg, x.ed)
+#define rsrt(x) sort(x.rbg, x.red)
 #define all(r) r.begin(), r.end()
-#define rall(r) r.rbegin(), e.rend()
+#define rall(r) r.rbegin(), r.rend()
 #define fast_out()                    \
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL)
+const int mod = 1e9 + 7;
 
-void taikon()
+// It’s just a bad day, not a bad life!
+
+void solve()
 {
     int n, m;
     cin >> n >> m;
-    char a[n + 2][m + 2];
-    char b[n + 2][m + 2];
-    fr(i, 0, n - 1)
+    char a[n][m];
+    char b[n][m];
+    char c[n][m];
+    for (int i = 0; i < n; i++)
     {
-        fr(j, 0, m - 1)
+        for (int j = 0; j < m; j++)
         {
-            a[i][j] = 'R';
-        }
-    }
-    fr(i, 1, n)
-    {
-        fr(j, 1, m)
-        {
-            if (a[i][j] == 'R')
-            {
-                a[i + 1][j] = 'W';
-                a[i - 1][j] = 'W';
-                a[i][j + 1] = 'W';
-                a[i][j - 1] = 'W';
-            }
+            cin >> a[i][j];
+            b[i][j] = a[i][j];
+            c[i][j] = a[i][j];
         }
     }
 
-    fr(i, 0, n - 1)
+    for (int i = 0; i < n; i++)
     {
-        fr(j, 0, m - 1)
+        for (int j = 0; j < m; j++)
         {
-            b[i][j] = 'W';
+            if (b[i][j] == '.')
+                if (i % 2 == 0)
+                {
+                    if (j % 2 == 0)
+                        b[i][j] = 'W';
+                    else
+                        b[i][j] = 'R';
+                }
+                else
+                {
+                    if (j % 2 == 0)
+                        b[i][j] = 'R';
+                    else
+                        b[i][j] = 'W';
+                }
         }
     }
-    fr(i, 1, n-1)
+    for (int i = 0; i < n; i++)
     {
-        fr(j, 1, m-1)
+        for (int j = 0; j < m; j++)
         {
-            if (a[i][j] == 'W')
+            if (c[i][j] == '.')
+                if (i % 2 == 0)
+                {
+                    if (j % 2 == 0)
+                        c[i][j] = 'R';
+                    else
+                        c[i][j] = 'W';
+                }
+                else
+                {
+                    if (j % 2 == 0)
+                        c[i][j] = 'W';
+                    else
+                        c[i][j] = 'R';
+                }
+        }
+    }
+    int fl1 = 0, fl2 = 0;
+    if (n == 1 || m == 1)
+    {
+        if (m == 1)
+        {
+            for (int j = 0; j < n - 1; j++)
             {
-                a[i + 1][j] = 'R';
-                a[i - 1][j] = 'R';
-                a[i][j + 1] = 'R';
-                a[i][j - 1] = 'R';
+                if (b[j][0] == b[j + 1][0])
+                {
+                    fl1 = 1;
+                }
+                if (c[j][0] == c[j + 1][0])
+                {
+                    fl2 = 1;
+                }
+            }
+        }
+        else
+        {
+            for (int j = 0; j < m - 1; j++)
+            {
+                if (b[0][j] == b[0][j + 1])
+                {
+                    fl1 = 1;
+                }
+                if (c[0][j] == c[0][j + 1])
+                {
+                    fl2 = 1;
+                }
+            }
+        }
+        if (fl1 == 1 && fl2 == 1)
+        {
+            nope;
+        }
+        else
+        {
+            yep;
+            if (fl1 == 0)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    for (int j = 0; j < m; j++)
+                    {
+                        cout << b[i][j];
+                    }
+                    cout nl;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    for (int j = 0; j < m; j++)
+                    {
+                        cout << c[i][j];
+                    }
+                    cout nl;
+                }
+            }
+        }
+        return;
+    }
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = 0; j < m - 1; j++)
+        {
+            if (c[i][j] == c[i][j + 1] || c[i][j] == c[i + 1][j])
+            {
+                fl2 = 1;
+            }
+            if (b[i][j] == b[i][j + 1] || b[i][j] == b[i + 1][j])
+            {
+                fl1 = 1;
             }
         }
     }
-    int flw = 0, flw1 = 0, flr = 0, flr1 = 0;
-    char c[n + 2][m + 2];
-    fr(i, 1, n)
+    if (fl1 == 1 && fl2 == 1)
     {
-        fr(j, 1, m)
+        nope;
+    }
+    else
+    {
+        yep;
+        if (fl1 == 0)
         {
-            cin >> c[i][j];
-            if (c[i][j] == 'W')
+            for (int i = 0; i < n; i++)
             {
-                flw = i;
-                flw1 = j;
+                for (int j = 0; j < m; j++)
+                {
+                    cout << b[i][j];
+                }
+                cout nl;
             }
-            else if (c[i][j] == 'R')
+        }
+        else
+        {
+            for (int i = 0; i < n; i++)
             {
-                flr = i;
-                flr1 = j;
+                for (int j = 0; j < m; j++)
+                {
+                    cout << c[i][j];
+                }
+                cout nl;
             }
         }
     }
-    // if (c[flw][flw1] == a[flw][flw1] && c[flr][flr1] == a[flr][flr1])
-    // {
-    yep;
-    fr(i, 1, n)
-    {
-        fr(j, 1, m)
-        {
-            cout << a[i][j];
-        }
-        cout nl;
-    }
-    // }
-    // else if (c[flw][flw1] == b[flw][flw1] && c[flr][flr1] == b[flr][flr1])
-    // {
-    yep;
-    fr(i, 1, n)
-    {
-        fr(j, 1, m)
-        {
-            cout << b[i][j];
-        }
-        cout nl;
-    }
-    // }
-    // else
-    //     nope;
 }
 
 int main()
@@ -130,6 +206,6 @@ int main()
     cin >> t;
     wh(t--)
     {
-        taikon();
+        solve();
     }
 }

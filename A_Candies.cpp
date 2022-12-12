@@ -15,10 +15,7 @@ using namespace std;
 #define rbg rbegin()
 #define red rend()
 #define sz size()
-#define space << " "
-#define vtpi vector<pair<int, int>>
-#define pft first
-#define psc second
+#define sp << " "
 #define fr(i, l, r) for (int i = l; i <= r; i++)
 #define fl(i, r, l) for (int i = r; i >= l; i--)
 #define wh while
@@ -30,29 +27,30 @@ using namespace std;
 #define fast_out()                    \
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL)
+const int mod = 1e9 + 7;
 
-void solve()
-{
-    int n;
-    cin >> n;
-    int k = 1, s = 1;
-    wh(true)
-    {
-        s += pow(2, k++);
-        if (n % s == 0)
-        {
-            cout << n / s nl;
-            return;
-        }
-    }
-}
+// It’s just a bad day, not a bad life!
 
 int main()
 {
-    int t;
-    cin >> t;
-    wh(t--)
+    fast_out();
+    int n, m;
+    cin >> n >> m;
+    int fl = n % m;
+    if (fl == 0)
     {
-        solve();
+        for (int i = 0; i < m; i++)
+        {
+            cout << n / m sp;
+        }
+    }
+    else
+    {
+        vti b;
+        for (int i = 0; i < m - fl; i++)
+            b.pb(n / m);
+        for (int i = 0; i < m - (m - fl); i++)
+            b.pb((n / m) + 1);
+        fat(x, b) cout << x sp;
     }
 }

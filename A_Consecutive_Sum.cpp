@@ -27,26 +27,30 @@ using namespace std;
 #define fast_out()                    \
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL)
+const int mod = 1e9 + 7;
+
+// It’s just a bad day, not a bad life!
 
 void solve()
 {
     int n, k;
     cin >> n >> k;
-    ll s = 0;
     vti a(n);
-    fat(x, a)
+    fat(x, a) cin >> x;
+    ll s = 0;
+    for (int i = 0; i < a.sz; i++)
     {
-        cin >> x;
-        s += x;
+        for (int j = i + k; j < a.sz; j += k)
+        {
+            if (a[i] < a[j])
+            {
+                swap(a[i], a[j]);
+            }
+        }
     }
-    if (n == k)
-    {
-        cout << s;
-        return;
-    }
-    
-    // 0 0 4 4 7
-    // 7 0 4 0 4
+    for (int i = 0; i < k; i++)
+        s += a[i];
+    cout << s nl;
 }
 
 int main()

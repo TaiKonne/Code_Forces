@@ -15,10 +15,7 @@ using namespace std;
 #define rbg rbegin()
 #define red rend()
 #define sz size()
-#define space << " "
-#define vtpi vector<pair<int, int>>
-#define pft first
-#define psc second
+#define sp << " "
 #define fr(i, l, r) for (int i = l; i <= r; i++)
 #define fl(i, r, l) for (int i = r; i >= l; i--)
 #define wh while
@@ -30,46 +27,13 @@ using namespace std;
 #define fast_out()                    \
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL)
-
-void solve()
-{
-    int n;
-    cin >> n;
-    vector<pair<int, int>> a;
-    vti le;
-    vti chan;
-    fr(i, 1, n * 2)
-    {
-        int z;
-        cin >> z;
-        if (z % 2 == 0)
-        {
-            chan.pb(z);
-        }
-        else
-            le.pb(z);
-    }
-
-    for (int i = 0; i < chan.sz - 1; i += 2)
-    {
-        a.pb({chan[i], chan[i + 1]});
-    }
-    for (int i = 0; i < le.sz - 1; i += 2)
-    {
-        a.pb({le[i], le[i + 1]});
-    }
-    fr(i, 0, n - 2)
-    {
-        cout << a[i].first << " " << a[i].second nl;
-    }
-}
+const int mod = 1e9 + 7;
 
 int main()
 {
-    int t;
-    cin >> t;
-    wh(t--)
-    {
-        solve();
-    }
+    int n;
+    cin >> n;
+    vti a(n);
+    fat(x, a) cin >> x;
+    
 }

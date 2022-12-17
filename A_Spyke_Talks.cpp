@@ -34,29 +34,31 @@ const int mod = 1e9 + 7;
 int main()
 {
     fast_out();
-    int m, d;
 
-    cin >> m >> d;
-    if (m == 2)
+    int n;
+    cin >> n;
+    vti a(n);
+    for (int i = 0; i < n; i++)
     {
-        if (d == 1)
-            cout << 4;
-        else
-            cout << 5;
+        cin >> a[i];
     }
-    else if (m == 4 || m == 6 || m == 9 || m == 11)
+    sort(all(a));
+    int count = 0;
+    for (int i = 1; i < a.sz; i++)
     {
-        if (d == 7)
-            cout << 6;
-        else
+        if (a[i] != 0 && a[i] == a[i - 1])
+        {
+            count++;
+            if (i + 1 < n && a[i] == a[i + 1])
+            {
+                count = -1;
+                break;
+            }
+        }
+    }
 
-            cout << 5;
-    }
-    else
-    {
-        if (d == 6 || d == 7)
-            cout << 6;
-        else
-            cout << 5;
-    }
+    cout << count;
+    // có n cuộc gọi chỉ có 2 người thư ký được gọi
+    // cho nhau trong cùng một thời điểm
+    // nếu có quá 3 người gọi chung với nhahu thì là không hợp lệ
 }

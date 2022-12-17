@@ -31,32 +31,40 @@ const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
 
+void solve()
+{
+    int n, k;
+    cin >> n >> k;
+    // anh ta có n đống kẹo
+    // đống kẹo i thì có ai kẹo
+    // anh ta làm theo như sao
+    // chọn i<j
+    // aj=ai+aj
+    // nếu đống kẹo nào nhiều hơn k thì bị mất sức mạnh
+    vti a(n);
+    fat(x, a) cin >> x;
+    sort(all(a));
+    int cnt = 0;
+    for (int i = 1; i < n; i++)
+    {
+        int fl = 0;
+        while (a[i] + a[0] <= k)
+        {
+            a[i] = a[i] + a[0];
+            cnt++;
+        }
+    }
+    // fat(x, a) cout << x sp;
+    cout << cnt nl;
+}
+
 int main()
 {
     fast_out();
-    int m, d;
-
-    cin >> m >> d;
-    if (m == 2)
+    int t;
+    cin >> t;
+    wh(t--)
     {
-        if (d == 1)
-            cout << 4;
-        else
-            cout << 5;
-    }
-    else if (m == 4 || m == 6 || m == 9 || m == 11)
-    {
-        if (d == 7)
-            cout << 6;
-        else
-
-            cout << 5;
-    }
-    else
-    {
-        if (d == 6 || d == 7)
-            cout << 6;
-        else
-            cout << 5;
+        solve();
     }
 }

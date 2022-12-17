@@ -31,32 +31,35 @@ const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
 
+void solve()
+{
+    // bài nhạc của anh ấy bao gồm n nốt nhạc
+    // sự đa dạng của bài nhạc là nốt khác nhau
+    // tìm số nốt nhạc có thể đổi tối đa ?
+
+    int n;
+    cin >> n;
+    set<int> a;
+    for (int i = 0; i < n; i++)
+    {
+        int z;
+        cin >> z;
+        if (a.count(z) == 1)
+        {
+            z++;
+        }
+        a.insert(z);
+    }
+    cout << a.sz nl;
+}
+
 int main()
 {
     fast_out();
-    int m, d;
-
-    cin >> m >> d;
-    if (m == 2)
+    int t;
+    cin >> t;
+    wh(t--)
     {
-        if (d == 1)
-            cout << 4;
-        else
-            cout << 5;
-    }
-    else if (m == 4 || m == 6 || m == 9 || m == 11)
-    {
-        if (d == 7)
-            cout << 6;
-        else
-
-            cout << 5;
-    }
-    else
-    {
-        if (d == 6 || d == 7)
-            cout << 6;
-        else
-            cout << 5;
+        solve();
     }
 }

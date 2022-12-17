@@ -34,29 +34,19 @@ const int mod = 1e9 + 7;
 int main()
 {
     fast_out();
-    int m, d;
-
-    cin >> m >> d;
-    if (m == 2)
+    int p, n;
+    cin >> p >> n;
+    map<int, int> a;
+    for (int i = 0; i < n; i++)
     {
-        if (d == 1)
-            cout << 4;
-        else
-            cout << 5;
+        int z;
+        cin >> z;
+        a[z % p]++;
+        if (a[z % p] == 2)
+        {
+            cout << ++i;
+            return 0;
+        }
     }
-    else if (m == 4 || m == 6 || m == 9 || m == 11)
-    {
-        if (d == 7)
-            cout << 6;
-        else
-
-            cout << 5;
-    }
-    else
-    {
-        if (d == 6 || d == 7)
-            cout << 6;
-        else
-            cout << 5;
-    }
+    cout << -1;
 }

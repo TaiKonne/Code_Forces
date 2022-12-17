@@ -34,29 +34,15 @@ const int mod = 1e9 + 7;
 int main()
 {
     fast_out();
-    int m, d;
-
-    cin >> m >> d;
-    if (m == 2)
-    {
-        if (d == 1)
-            cout << 4;
-        else
-            cout << 5;
-    }
-    else if (m == 4 || m == 6 || m == 9 || m == 11)
-    {
-        if (d == 7)
-            cout << 6;
-        else
-
-            cout << 5;
-    }
+    int n, m, k;
+    cin >> n >> m >> k;
+    k--;
+    int x = k / (2 * m);
+    k -= (x * 2 * m);
+    int p = k / 2;
+    cout << x + 1 sp << p + 1 sp;
+    if (k % 2 == 0)
+        cout << "L";
     else
-    {
-        if (d == 6 || d == 7)
-            cout << 6;
-        else
-            cout << 5;
-    }
+        cout << "R";
 }

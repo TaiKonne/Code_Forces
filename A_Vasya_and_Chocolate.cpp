@@ -31,32 +31,33 @@ const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
 
+void solve()
+{
+    ll s, a, b, c;
+    cin >> s >> a >> b >> c;
+    // mua thanh a được nhận thanh b
+    // có thể mua bất cứ lần nào
+    // đỉ lồn có s rup
+    // mỗi thanh có c rup
+    // output số si cu la mà đỉ lồn nhận được
+    // if (a > b)
+    //     swap(a, b);
+
+    s /= c;
+    int fl = s / a;
+    s %= a;
+    ll fl2 = fl * (a + b);
+    cout << fl2 + s nl;
+    int Max = *max_element();
+}
+
 int main()
 {
     fast_out();
-    int m, d;
-
-    cin >> m >> d;
-    if (m == 2)
+    int t;
+    cin >> t;
+    wh(t--)
     {
-        if (d == 1)
-            cout << 4;
-        else
-            cout << 5;
-    }
-    else if (m == 4 || m == 6 || m == 9 || m == 11)
-    {
-        if (d == 7)
-            cout << 6;
-        else
-
-            cout << 5;
-    }
-    else
-    {
-        if (d == 6 || d == 7)
-            cout << 6;
-        else
-            cout << 5;
+        solve();
     }
 }

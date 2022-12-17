@@ -31,32 +31,20 @@ const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
 
+void solve()
+{
+    int n;
+    cin >> n;
+    string a;
+}
+
 int main()
 {
     fast_out();
-    int m, d;
-
-    cin >> m >> d;
-    if (m == 2)
+    int t;
+    cin >> t;
+    wh(t--)
     {
-        if (d == 1)
-            cout << 4;
-        else
-            cout << 5;
-    }
-    else if (m == 4 || m == 6 || m == 9 || m == 11)
-    {
-        if (d == 7)
-            cout << 6;
-        else
-
-            cout << 5;
-    }
-    else
-    {
-        if (d == 6 || d == 7)
-            cout << 6;
-        else
-            cout << 5;
+        solve();
     }
 }

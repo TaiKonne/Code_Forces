@@ -34,29 +34,36 @@ const int mod = 1e9 + 7;
 int main()
 {
     fast_out();
-    int m, d;
-
-    cin >> m >> d;
-    if (m == 2)
+    string a;
+    getline(cin, a);
+    reverse(all(a));
+    int fl1 = 0, fl2 = 0;
+    for (int i = 0; i < a.sz; i++)
     {
-        if (d == 1)
-            cout << 4;
-        else
-            cout << 5;
+        if (a[i] >= 97)
+            a[i] -= 32;
+        if (a[i] >= 'A' && a[i] <= 'Z')
+        {
+            if (a[i] == 'A' || a[i] == 'E' || a[i] == 'I' || a[i] == 'O' || a[i] == 'U' || a[i] == 'Y')
+            {
+                fl1++;
+            }
+            else if (a[i] != 'A' || a[i] != 'E' || a[i] != 'I' || a[i] != 'O' || a[i] != 'U' || a[i] != 'Y')
+            {
+                fl2++;
+            }
+            if (fl1 > fl2)
+            {
+                yep;
+                return 0;
+            }
+            if (fl2 > fl1)
+            {
+                nope;
+                return 0;
+            }
+            // cout << fl1 sp << fl2 nl;
+        }
     }
-    else if (m == 4 || m == 6 || m == 9 || m == 11)
-    {
-        if (d == 7)
-            cout << 6;
-        else
-
-            cout << 5;
-    }
-    else
-    {
-        if (d == 6 || d == 7)
-            cout << 6;
-        else
-            cout << 5;
-    }
+    cout << a;
 }

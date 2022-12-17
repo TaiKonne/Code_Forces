@@ -34,29 +34,22 @@ const int mod = 1e9 + 7;
 int main()
 {
     fast_out();
-    int m, d;
+    int n, a, b;
+    cin >> n >> a >> b;
+    vector<pair<int, int>> a1(n);
 
-    cin >> m >> d;
-    if (m == 2)
+    for (int i = 0; i < a1.sz; i++)
     {
-        if (d == 1)
-            cout << 4;
-        else
-            cout << 5;
+        cout << a1[i].first << ':' << a1[i].second nl;
     }
-    else if (m == 4 || m == 6 || m == 9 || m == 11)
-    {
-        if (d == 7)
-            cout << 6;
-        else
-
-            cout << 5;
-    }
-    else
-    {
-        if (d == 6 || d == 7)
-            cout << 6;
-        else
-            cout << 5;
-    }
+    // cout << a << ":" << b;
+    // n số trận đấu
+    // > thắng ngược lại thì thua
+    // thu thập in4 giải đấu thấp hơn
+    // số trận đấu của đội n
+    // a số bàn thắng của đội n
+    // b số bàn thua của đội n
+    // yêu cầu tính số trần hòa tối thiểu có thể xảy ra
+    // trong các trận đấu của đội và
+    // cung cấp list tỷ số trận đấu với số trận hòa tối thiểu
 }

@@ -31,32 +31,39 @@ const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
 
-int main()
+void solve()
 {
-    fast_out();
-    int m, d;
-
-    cin >> m >> d;
-    if (m == 2)
+    int cnt = 0;
+    int n;
+    cin >> n;
+    if (n <= 9)
     {
-        if (d == 1)
-            cout << 4;
-        else
-            cout << 5;
-    }
-    else if (m == 4 || m == 6 || m == 9 || m == 11)
-    {
-        if (d == 7)
-            cout << 6;
-        else
-
-            cout << 5;
+        cout << n;
     }
     else
     {
-        if (d == 6 || d == 7)
-            cout << 6;
-        else
-            cout << 5;
+        if (n >= 10 && n <= 99)
+        {
+            cout << 9 + n / 10;
+        }
+        if (n >= 100)
+        {
+            string a = to_string(n);
+            int fl = a.sz - 1;
+            int fl2 = (a[0] - '0');
+            cout << fl2 + (9 * fl2) - 9;
+        }
+    }
+    cout nl;
+}
+
+int main()
+{
+    fast_out();
+    int t;
+    cin >> t;
+    wh(t--)
+    {
+        solve();
     }
 }

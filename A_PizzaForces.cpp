@@ -33,42 +33,36 @@ const int mod = 1e9 + 7;
 
 void solve()
 {
-    int m, s;
-    cin >> m >> s;
-    int s1 = 0;
-    int Max = 0;
-    vector<bool> a(1001, false);
-    for (int i = 1; i <= m; i++)
+    ll n;
+    cin >> n;
+    ll s = 0;
+    if (n <= 6)
     {
-        int z;
-        cin >> z;
-        Max = max(z, Max);
-        a[z] = true;
+        cout << 15 nl;
+        return;
     }
-
-    for (int i = 1; i <= s; i++)
+    else if (n <= 8)
     {
-        if (a[i] == 0 && s > 0)
-        {
-            a[i] = true;
-            s -= i;
-            Max = max(i, Max);
-        }
+        cout << 20 nl;
+        return;
     }
-    if (s != 0)
-        nope;
-    else
+    else if (n <= 10)
     {
-        for (int i = 1; i <= Max; i++)
-        {
-            if (a[i] == false)
-            {
-                nope;
-                return;
-            }
-        }
-        yep;
+        cout << 25 nl;
+        return;
     }
+    if (n % 2 != 0)
+        n++;
+    // 6:15
+    // 8:20
+    // 10:25
+    // thời gian nướng của đơn hàng là tổng thời gian nướng của tất cả
+    // cả loại pizza trong đơn
+    // task: số phút tối thiểu cần để tổng ít nhất n lát
+    // ta có mỗi bánh có thời gian trung bình nướng là 2.5p
+    // vì thế n*2.5
+    s = n * 2.5;
+    cout << s nl;
 }
 
 int main()

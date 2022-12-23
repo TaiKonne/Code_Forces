@@ -33,42 +33,25 @@ const int mod = 1e9 + 7;
 
 void solve()
 {
-    int m, s;
-    cin >> m >> s;
-    int s1 = 0;
-    int Max = 0;
-    vector<bool> a(1001, false);
-    for (int i = 1; i <= m; i++)
-    {
-        int z;
-        cin >> z;
-        Max = max(z, Max);
-        a[z] = true;
-    }
+    int n;
+    cin >> n;
 
-    for (int i = 1; i <= s; i++)
+    for (int i = 1; i <= n; i++)
     {
-        if (a[i] == 0 && s > 0)
+        cout << i sp;
+        for (int j = n; j >= 1; j--)
         {
-            a[i] = true;
-            s -= i;
-            Max = max(i, Max);
-        }
-    }
-    if (s != 0)
-        nope;
-    else
-    {
-        for (int i = 1; i <= Max; i++)
-        {
-            if (a[i] == false)
+            if (i != j)
             {
-                nope;
-                return;
+                cout << j sp;
             }
         }
-        yep;
+        cout nl;
     }
+
+    // 4 3 2 1
+    // 4 1 3 2
+    // 4 2 1 3
 }
 
 int main()

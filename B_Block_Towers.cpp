@@ -33,42 +33,23 @@ const int mod = 1e9 + 7;
 
 void solve()
 {
-    int m, s;
-    cin >> m >> s;
-    int s1 = 0;
-    int Max = 0;
-    vector<bool> a(1001, false);
-    for (int i = 1; i <= m; i++)
-    {
-        int z;
-        cin >> z;
-        Max = max(z, Max);
-        a[z] = true;
-    }
+    int n;
+    cin >> n;
+    vtll a(n);
+    fat(x, a) cin >> x;
+    // di chuyển từ i to j nhưng chỉ khi ai>aj thì  aj+1 ai-1
 
-    for (int i = 1; i <= s; i++)
+    int cnt = 0;
+    sort(a.bg + 1, a.ed);
+    ll s = a[0];
+    for (int i = 1; i < a.sz; i++)
     {
-        if (a[i] == 0 && s > 0)
+        if (a[i] > s)
         {
-            a[i] = true;
-            s -= i;
-            Max = max(i, Max);
+            s += (a[i] - s + 1) / 2;
         }
     }
-    if (s != 0)
-        nope;
-    else
-    {
-        for (int i = 1; i <= Max; i++)
-        {
-            if (a[i] == false)
-            {
-                nope;
-                return;
-            }
-        }
-        yep;
-    }
+    cout << s nl;
 }
 
 int main()

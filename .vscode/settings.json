@@ -23,4 +23,8 @@
     "editor.wordBasedSuggestions": true,
     // Enable parameter hints
     "editor.parameterHints.enabled": true,
+    "files.associations": {
+        "iostream": "cpp",
+        "cmath": "cpp"
+    },
 }

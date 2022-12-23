@@ -33,42 +33,38 @@ const int mod = 1e9 + 7;
 
 void solve()
 {
-    int m, s;
-    cin >> m >> s;
-    int s1 = 0;
-    int Max = 0;
-    vector<bool> a(1001, false);
-    for (int i = 1; i <= m; i++)
+    int n, k;
+    cin >> n >> k;
+    vector<pair<int, int>> a(n);
+    for (int i = 0; i < n; i++)
     {
-        int z;
-        cin >> z;
-        Max = max(z, Max);
-        a[z] = true;
+        cin >> a[i].first;
+    }
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i].second;
+    }
+    sort(all(a));
+    vti b(n + 1, 1e9);
+    for (int i = n - 1; i >= 0; i--)
+    {
+        b[i] = min(a[i].second, b[i + 1]);
     }
 
-    for (int i = 1; i <= s; i++)
+    int cnt_mons = 0, fl = 0;
+    while (k > 0 && cnt_mons < n)
     {
-        if (a[i] == 0 && s > 0)
-        {
-            a[i] = true;
-            s -= i;
-            Max = max(i, Max);
-        }
+        fl += k;
+        while (a[cnt_mons].first <= fl && cnt_mons < n)
+            cnt_mons++;
+        if (cnt_mons < n)
+            k -= b[cnt_mons];
     }
-    if (s != 0)
-        nope;
-    else
-    {
-        for (int i = 1; i <= Max; i++)
-        {
-            if (a[i] == false)
-            {
-                nope;
-                return;
-            }
-        }
+    // cout << cnt_mons nl;
+    if (cnt_mons == n)
         yep;
-    }
+    else
+        nope;
 }
 
 int main()

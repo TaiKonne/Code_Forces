@@ -33,42 +33,24 @@ const int mod = 1e9 + 7;
 
 void solve()
 {
-    int m, s;
-    cin >> m >> s;
-    int s1 = 0;
-    int Max = 0;
-    vector<bool> a(1001, false);
-    for (int i = 1; i <= m; i++)
-    {
-        int z;
-        cin >> z;
-        Max = max(z, Max);
-        a[z] = true;
-    }
+    int a, b, c, d, k;
+    cin >> a >> b >> c >> d >> k;
 
-    for (int i = 1; i <= s; i++)
+    int fl = ceil(a / (c * 1.0));
+    int fl1 = ceil(b / (d * 1.0));
+    if (fl + fl1 <= k)
     {
-        if (a[i] == 0 && s > 0)
-        {
-            a[i] = true;
-            s -= i;
-            Max = max(i, Max);
-        }
+        cout << fl sp << fl1 nl;
     }
-    if (s != 0)
-        nope;
     else
-    {
-        for (int i = 1; i <= Max; i++)
-        {
-            if (a[i] == false)
-            {
-                nope;
-                return;
-            }
-        }
-        yep;
-    }
+        cout << -1 nl;
+    // a các bài giảng
+    // b tại trường đại học
+    // c 1 cây bút có thể viết c bài giảng và bút hết mực
+    // d 1 cây bút chì đủ để vẽ tất cả các bản thiết kế trong lớp thực hành d
+    // ko quá k các bút,
+    // thgloz mún lấy x bút và y bút chì thì chúng vừa đủ
+    // với hộp bút khi và chỉ khi x+y<=k
 }
 
 int main()

@@ -30,45 +30,37 @@ using namespace std;
 const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
-
+void so1(int &a, int &b, int &c, int &d)
+{
+    int fl = a;
+    a = c;
+    int flb = b;
+    b = fl;
+    c = d;
+    d = flb;
+    return;
+}
 void solve()
 {
-    int m, s;
-    cin >> m >> s;
-    int s1 = 0;
-    int Max = 0;
-    vector<bool> a(1001, false);
-    for (int i = 1; i <= m; i++)
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+    // if (a < c && a < b && c < d && b < d)
+    //     yep;
+    if (a < b && a < c && b < d && c < d)
     {
-        int z;
-        cin >> z;
-        Max = max(z, Max);
-        a[z] = true;
-    }
-
-    for (int i = 1; i <= s; i++)
-    {
-        if (a[i] == 0 && s > 0)
-        {
-            a[i] = true;
-            s -= i;
-            Max = max(i, Max);
-        }
-    }
-    if (s != 0)
-        nope;
-    else
-    {
-        for (int i = 1; i <= Max; i++)
-        {
-            if (a[i] == false)
-            {
-                nope;
-                return;
-            }
-        }
         yep;
+        return;
     }
+    for (int i = 0; i < 4; i++)
+    {
+        so1(a, b, c, d);
+        if (a < b && a < c && b < d && c < d)
+        {
+            yep;
+            return;
+        }
+    }
+    nope;
 }
 
 int main()

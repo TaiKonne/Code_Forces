@@ -33,42 +33,30 @@ const int mod = 1e9 + 7;
 
 void solve()
 {
-    int m, s;
-    cin >> m >> s;
-    int s1 = 0;
-    int Max = 0;
-    vector<bool> a(1001, false);
-    for (int i = 1; i <= m; i++)
+    int n;
+    cin >> n;
+    string a;
+    cin >> a;
+    // có một chuỗi a bao gồm 0 và 1
+    // thêm + và - vào giữa các cặp liên tiếp để làm cho giá trị tyệt
+    // đối của biểu thức thu được càng nhỏ càng tốt
+    string b = "";
+    int fl = (a[0] - '0');
+    for (int i = 1; i < a.sz; i++)
     {
-        int z;
-        cin >> z;
-        Max = max(z, Max);
-        a[z] = true;
-    }
-
-    for (int i = 1; i <= s; i++)
-    {
-        if (a[i] == 0 && s > 0)
+        if (fl == 0)
         {
-            a[i] = true;
-            s -= i;
-            Max = max(i, Max);
+            b += '+';
+            fl += (a[i] - '0');
+        }
+        else
+        {
+            b += '-';
+            fl -= (a[i] - '0');
         }
     }
-    if (s != 0)
-        nope;
-    else
-    {
-        for (int i = 1; i <= Max; i++)
-        {
-            if (a[i] == false)
-            {
-                nope;
-                return;
-            }
-        }
-        yep;
-    }
+    // reverse(all(b));
+    cout << b nl;
 }
 
 int main()

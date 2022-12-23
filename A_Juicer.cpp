@@ -31,53 +31,29 @@ const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
 
-void solve()
-{
-    int m, s;
-    cin >> m >> s;
-    int s1 = 0;
-    int Max = 0;
-    vector<bool> a(1001, false);
-    for (int i = 1; i <= m; i++)
-    {
-        int z;
-        cin >> z;
-        Max = max(z, Max);
-        a[z] = true;
-    }
-
-    for (int i = 1; i <= s; i++)
-    {
-        if (a[i] == 0 && s > 0)
-        {
-            a[i] = true;
-            s -= i;
-            Max = max(i, Max);
-        }
-    }
-    if (s != 0)
-        nope;
-    else
-    {
-        for (int i = 1; i <= Max; i++)
-        {
-            if (a[i] == false)
-            {
-                nope;
-                return;
-            }
-        }
-        yep;
-    }
-}
-
 int main()
 {
     fast_out();
-    int t;
-    cin >> t;
-    wh(t--)
+    int n, b, d;
+    cin >> n >> b >> d;
+    vti a(n);
+    fat(x, a) cin >> x;
+
+    int cnt = 0;
+    int fl = 0;
+    for (int i = 0; i < a.sz; i++)
     {
-        solve();
+        if (a[i] <= b)
+        {
+            fl += a[i];
+            if (fl > d)
+            {
+                cnt++;
+                fl = 0;
+            }
+        }
     }
+    cout << cnt nl;
+    // phần chất thải sẽ tràn nếu quả cảm có tổng kích thước
+    // > d
 }

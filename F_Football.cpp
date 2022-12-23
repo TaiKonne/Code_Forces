@@ -38,18 +38,66 @@ int main()
     cin >> n >> a >> b;
     vector<pair<int, int>> a1(n);
 
+    if (n == 1)
+    {
+        if (a == b)
+        {
+            cout << 1 nl << a << ":" << b;
+        }
+        else
+        {
+            cout << 0 nl << a << ":" << b;
+        }
+        return 0;
+    }
+
+    int l = 0, r = a1.sz - 1;
+    while (l < r && a > 0 && b > 0)
+    {
+        if (a > 0)
+        {
+            a1[l].first++;
+            a--;
+            l++;
+        }
+        if (b > 0)
+        {
+            a1[r].second++;
+            b--;
+            r--;
+        }
+    }
+    fat(x, a1)
+    {
+        if (a > 0 && (x.first == 0 && x.second == 0))
+        {
+            x.first++;
+            a--;
+        }
+        if (b > 0 && (x.first == 0 && x.second == 0))
+        {
+            x.second++;
+            b--;
+        }
+    }
+    if (b > 0)
+    {
+        a1[a1.sz - 1].second += b;
+        b = 0;
+    }
+    if (a > 0)
+    {
+        a1[0].first += a;
+        a = 0;
+    }
+    int cnt = 0;
+    fat(x, a1)
+    {
+        x.first == x.second ? cnt++ : cnt;
+    }
+    cout << cnt nl;
     for (int i = 0; i < a1.sz; i++)
     {
-        cout << a1[i].first << ':' << a1[i].second nl;
+        cout << a1[i].first << ":" << a1[i].second nl;
     }
-    // cout << a << ":" << b;
-    // n số trận đấu
-    // > thắng ngược lại thì thua
-    // thu thập in4 giải đấu thấp hơn
-    // số trận đấu của đội n
-    // a số bàn thắng của đội n
-    // b số bàn thua của đội n
-    // yêu cầu tính số trần hòa tối thiểu có thể xảy ra
-    // trong các trận đấu của đội và
-    // cung cấp list tỷ số trận đấu với số trận hòa tối thiểu
 }

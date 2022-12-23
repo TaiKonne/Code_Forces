@@ -33,41 +33,43 @@ const int mod = 1e9 + 7;
 
 void solve()
 {
-    int m, s;
-    cin >> m >> s;
-    int s1 = 0;
-    int Max = 0;
-    vector<bool> a(1001, false);
-    for (int i = 1; i <= m; i++)
+    int n, q;
+    cin >> n >> q;
+    ll s = 0;
+    vtll a(n);
+    int cnt_odd = 0, cnt_even = 0;
+    fat(x, a)
     {
-        int z;
-        cin >> z;
-        Max = max(z, Max);
-        a[z] = true;
+        cin >> x;
+        s += x;
+        if (x % 2 == 0)
+            cnt_even++;
+        else
+            cnt_odd++;
     }
-
-    for (int i = 1; i <= s; i++)
+    for (int i = 0; i < q; i++)
     {
-        if (a[i] == 0 && s > 0)
+        ll type_query, data;
+        cin >> type_query >> data;
+        if (type_query == 0 && data % 2 == 0)
         {
-            a[i] = true;
-            s -= i;
-            Max = max(i, Max);
+            s += (cnt_even * data);
         }
-    }
-    if (s != 0)
-        nope;
-    else
-    {
-        for (int i = 1; i <= Max; i++)
+        else if (type_query == 0 && data % 2 != 0)
         {
-            if (a[i] == false)
-            {
-                nope;
-                return;
-            }
+            s += (cnt_even * data);
+            cnt_odd += cnt_even;
+            cnt_even = 0;
         }
-        yep;
+        else if (type_query == 1 && data % 2 != 0)
+        {
+            s += (cnt_odd * data);
+            cnt_even += cnt_odd;
+            cnt_odd = 0;
+        }
+        else
+            s += (cnt_odd * data);
+        cout << s nl;
     }
 }
 

@@ -27,8 +27,17 @@ using namespace std;
 #define fast_out()                    \
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL)
+const int mod = 1e9 + 7;
+
+// It’s just a bad day, not a bad life!
+// Leave Today for a Better Tomorrow
 
 int main()
 {
+    fast_out();
+    int n, k;
+    cin >> n >> k;
+    vti a(n);
+    fat(x, a) cin >> x;
     
 }

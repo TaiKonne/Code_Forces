@@ -32,10 +32,10 @@ void solve()
 {
     int n;
     vti a(n);
+    map<int, int> mp;
     fat(x, a) cin >> x;
     string b;
     cin >> b;
-    
 }
 int main()
 {

@@ -35,29 +35,21 @@ void solve()
 {
     int n;
     cin >> n;
-    int a[n + 1][n + 1];
-
-    int s = 0;
-    fr(i, 0, n - 1)
+    vector<pair<int, int>> a;
+    ll s = 0;
+    for (int i = 0; i < n; i++)
     {
-        fr(j, 0, 1)
-        {
-            cin >> a[i][j];
-        }
+        int x, y;
+        cin >> x >> y;
+        a.pb(make_pair(x, y));
     }
-    fr(i, 0, n - 1)
+    sort(all(a));
+    a.insert(a.begin(), {0, 0});
+    a.push_back({0, 0});
+    for (int i = 0; i <= n; i++)
     {
-        fr(j, 0, 1)
-        {
-            // cout << a[i][j] space;
-            if (a[i][j] != 0)
-            {
-                s = s + abs(a[i][j]) * 2;
-            }
-        }
-        // cout nl;
+        s += abs(a[i + 1].first - a[i].first) + abs(a[i + 1].second - a[i].second);
     }
-    // cout << "--------" nl;
     cout << s nl;
 }
 

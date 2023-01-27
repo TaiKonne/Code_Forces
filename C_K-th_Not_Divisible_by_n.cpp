@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+using namespace std::chrono;
 #define nl << '\n'
 #define vti vector<int>
 #define vtll vector<long long>
@@ -26,13 +26,35 @@ using namespace std;
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL)
 
+void binary(int n, int k)
+{
+    int fl = 0;
+    int l = 1, r = INT_MAX;
+    while (l <= r)
+    {
+        int mid = l + (r - l) / 2;
+        if (k <= mid - mid / n)
+        {
+            fl = mid;
+            r = mid - 1;
+        }
+        else
+        {
+            l = mid + 1;
+        }
+    }
+    cout << fl nl;
+}
+
 void solve()
 {
     int n, k;
     cin >> n >> k;
-    cout << k / n nl;
+    binary(n, k);
+    /*
+    1 2 3| 4 5 6| 7 8 9| 10
+    */
 }
-
 int main()
 {
     fast_out();

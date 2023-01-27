@@ -36,6 +36,36 @@ void solve()
     int n;
     cin >> n;
     string a;
+    cin >> a;
+    // a += '?';
+    // a = '?' + a;
+    int Max = 0;
+    if (n == 2 || n == 1)
+    {
+        nope;
+        return;
+    }
+    map<string, int> mp;
+    string temp = "";
+
+    for (int i = 1; i <n; i++)
+    {
+        temp = "";
+        temp += a[i - 1];
+        temp += a[i];
+        // reverse(all(temp));
+        if (mp[temp] > 0)
+        {
+            if (i - mp[temp] > 1)
+            {
+                yep;
+                return;
+            }
+            else continue;
+        }
+        mp[temp] = i;
+    }
+    nope;
 }
 
 int main()

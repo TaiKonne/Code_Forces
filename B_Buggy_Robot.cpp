@@ -28,62 +28,34 @@ using namespace std;
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL)
 const int mod = 1e9 + 7;
-
+const ll IFN = 1e18;
 // It’s just a bad day, not a bad life!
-
-bool check[19531251];
-bool check1[19531251];
-vector<int> a[19531251];
-vti c;
-vti d;
-// write BFS c++
-void bfs(int x)
-{
-    check[x] = true;
-    queue<int> q;
-    q.push(x);
-    while (!q.empty())
-    {
-        int z = q.front();
-        q.pop();
-        c.pb(z);
-        for (auto v : a[z])
-        {
-            if (check[v] == false)
-            {
-                check[v] = true;
-                q.push(v);
-            }
-        }
-    }
-}
+// Leave Today for a Better Tomorrow
 
 int main()
 {
     fast_out();
+    string a;
     int n;
-    cin >> n;
-    vti b;
-    for (int i = 0; i < n - 1; i++)
+    cin >> n >> a;
+
+    map<char, int> mp;
+    mp['R'] = 0;
+    mp['D'] = 0;
+    mp['L'] = 0;
+    mp['U'] = 0;
+    for (int i = 0; i < a.sz; i++)
     {
-        int x, y;
-        cin >> x >> y;
-        a[x].pb(y);
-        // a[y].pb(x);
+        mp[a[i]]++;
     }
-    for (int i = 0; i < n; i++)
+
+    int Min_LR = 1e9, Min_DU = 1e9;
+    for (auto x : mp)
     {
-        int z;
-        cin >> z;
-        b.pb(z);
+        if (x.first == 'R' || x.first == 'L')
+            Min_LR = min(Min_LR, x.second);
+        else
+            Min_DU = min(Min_DU, x.second);
     }
-    bfs(1);
-    fat(x, c) cout << x sp;
-    cout nl;
-    if (c == b)
-    {
-        yep;
-    }
-    else
-        nope;
+    cout << (Min_DU + Min_LR) * 2;
 }

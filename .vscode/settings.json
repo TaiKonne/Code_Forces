@@ -5,6 +5,12 @@
         "complex": "cpp",
         "cstdlib": "cpp",
         "iostream": "cpp",
-        "random": "cpp"
-    }
+        "random": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "vector": "cpp"
+    },
+    "workbench.colorTheme": "Spotify Theme Soft"
 }

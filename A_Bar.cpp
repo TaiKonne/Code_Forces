@@ -28,62 +28,45 @@ using namespace std;
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL)
 const int mod = 1e9 + 7;
-
+const ll IFN = 1e18;
 // It’s just a bad day, not a bad life!
+// Leave Today for a Better Tomorrow
 
-bool check[19531251];
-bool check1[19531251];
-vector<int> a[19531251];
-vti c;
-vti d;
-// write BFS c++
-void bfs(int x)
+int change_to_int(string x)
 {
-    check[x] = true;
-    queue<int> q;
-    q.push(x);
-    while (!q.empty())
+    int s = 0;
+    for (int i = 0; i < x.sz; i++)
     {
-        int z = q.front();
-        q.pop();
-        c.pb(z);
-        for (auto v : a[z])
-        {
-            if (check[v] == false)
-            {
-                check[v] = true;
-                q.push(v);
-            }
-        }
+        s = s * 10 + (int)(x[i] - '0');
     }
+    return s;
 }
 
 int main()
 {
     fast_out();
+    string a[11] = {"ABSINTH", "BEER", "BRANDY", "CHAMPAGNE", "GIN", "RUM", "SAKE", "TEQUILA", "VODKA", "WHISKEY", "WINE"};
     int n;
     cin >> n;
-    vti b;
-    for (int i = 0; i < n - 1; i++)
+    int cnt = 0;
+    while (n--)
     {
-        int x, y;
-        cin >> x >> y;
-        a[x].pb(y);
-        // a[y].pb(x);
+        string s;
+        cin >> s;
+        if (s[0] >= '1' && s[0] <= '9')
+        {
+            int age = change_to_int(s);
+            if (age < 18)
+                cnt++;
+        }
+        else
+        {
+            for (int i = 0; i < 11; i++)
+            {
+                if (s == a[i])
+                    cnt++;
+            }
+        }
     }
-    for (int i = 0; i < n; i++)
-    {
-        int z;
-        cin >> z;
-        b.pb(z);
-    }
-    bfs(1);
-    fat(x, c) cout << x sp;
-    cout nl;
-    if (c == b)
-    {
-        yep;
-    }
-    else
-        nope;
+    cout << cnt;
 }

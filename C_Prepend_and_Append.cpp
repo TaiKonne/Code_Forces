@@ -30,60 +30,38 @@ using namespace std;
 const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
+// Leave Today for a Better Tomorrow
 
-bool check[19531251];
-bool check1[19531251];
-vector<int> a[19531251];
-vti c;
-vti d;
-// write BFS c++
-void bfs(int x)
+void solve()
 {
-    check[x] = true;
-    queue<int> q;
-    q.push(x);
-    while (!q.empty())
+    int n;
+    cin >> n;
+    string a;
+    cin >> a;
+    int l = 0, r = n - 1;
+    int cnt = 0;
+    while (((a[l] == '1' && a[r] == '0') || (a[l] == '0' && a[r] == '1')) && l < r)
     {
-        int z = q.front();
-        q.pop();
-        c.pb(z);
-        for (auto v : a[z])
-        {
-            if (check[v] == false)
-            {
-                check[v] = true;
-                q.push(v);
-            }
-        }
+        l++, r--;
+        cnt++;
+    }
+    if (cnt == 0)
+    {
+        cout << n nl;
+    }
+    else
+    {
+        cout << n - cnt * 2 nl;
     }
 }
 
 int main()
 {
     fast_out();
-    int n;
-    cin >> n;
-    vti b;
-    for (int i = 0; i < n - 1; i++)
+    int t;
+    cin >> t;
+    wh(t--)
     {
-        int x, y;
-        cin >> x >> y;
-        a[x].pb(y);
-        // a[y].pb(x);
+        solve();
     }
-    for (int i = 0; i < n; i++)
-    {
-        int z;
-        cin >> z;
-        b.pb(z);
-    }
-    bfs(1);
-    fat(x, c) cout << x sp;
-    cout nl;
-    if (c == b)
-    {
-        yep;
-    }
-    else
-        nope;
 }

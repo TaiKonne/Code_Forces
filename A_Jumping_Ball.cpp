@@ -30,60 +30,25 @@ using namespace std;
 const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
-
-bool check[19531251];
-bool check1[19531251];
-vector<int> a[19531251];
-vti c;
-vti d;
-// write BFS c++
-void bfs(int x)
-{
-    check[x] = true;
-    queue<int> q;
-    q.push(x);
-    while (!q.empty())
-    {
-        int z = q.front();
-        q.pop();
-        c.pb(z);
-        for (auto v : a[z])
-        {
-            if (check[v] == false)
-            {
-                check[v] = true;
-                q.push(v);
-            }
-        }
-    }
-}
+// Leave Today for a Better Tomorrow
 
 int main()
 {
     fast_out();
     int n;
     cin >> n;
-    vti b;
-    for (int i = 0; i < n - 1; i++)
+    string a;
+    cin >> a;
+    if (a[0] == '<')
     {
-        int x, y;
-        cin >> x >> y;
-        a[x].pb(y);
-        // a[y].pb(x);
+        cout << 1;
     }
-    for (int i = 0; i < n; i++)
+    else if (a[n - 1] == '>')
     {
-        int z;
-        cin >> z;
-        b.pb(z);
-    }
-    bfs(1);
-    fat(x, c) cout << x sp;
-    cout nl;
-    if (c == b)
-    {
-        yep;
+        cout << n;
     }
     else
-        nope;
+    {
+        cout << 0;
+    }
 }

@@ -30,60 +30,41 @@ using namespace std;
 const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
-
-bool check[19531251];
-bool check1[19531251];
-vector<int> a[19531251];
-vti c;
-vti d;
-// write BFS c++
-void bfs(int x)
-{
-    check[x] = true;
-    queue<int> q;
-    q.push(x);
-    while (!q.empty())
-    {
-        int z = q.front();
-        q.pop();
-        c.pb(z);
-        for (auto v : a[z])
-        {
-            if (check[v] == false)
-            {
-                check[v] = true;
-                q.push(v);
-            }
-        }
-    }
-}
+// Leave Today for a Better Tomorrow
 
 int main()
 {
     fast_out();
-    int n;
-    cin >> n;
-    vti b;
-    for (int i = 0; i < n - 1; i++)
+    int n, a, b;
+    cin >> n >> a >> b;
+    vti A(n);
+    int s = 0;
+    fat(x, A)
     {
-        int x, y;
-        cin >> x >> y;
-        a[x].pb(y);
-        // a[y].pb(x);
+        cin >> x;
+        s += x;
     }
-    for (int i = 0; i < n; i++)
+    sort(A.begin() + 1, A.end());
+    int fl = A[0];
+    int cnt = 0;
+    for (int i = n - 1; i > 0; i--)
     {
-        int z;
-        cin >> z;
-        b.pb(z);
+        if (fl * a / s >= b)
+        {
+            break;
+        }
+        s -= A[i];
+        cnt++;
     }
-    bfs(1);
-    fat(x, c) cout << x sp;
-    cout nl;
-    if (c == b)
-    {
-        yep;
-    }
-    else
-        nope;
+    cout << cnt;
+    /*
+    muốn tưới 1 bông hoa duy nhất là em
+    anh chỉ có thể sử dụng 1 lỗ đầu tiên để tưới choa iem
+    anh có thể chặn 1 số lỗ đó em
+    a lít nước
+    b lưu lượng nước mà anh mún đổ vào em
+    anh phải chặn bao nhiêu lỗ vì em
+
+
+    */
 }

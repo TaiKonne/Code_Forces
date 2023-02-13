@@ -28,48 +28,46 @@ using namespace std;
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL)
 const int mod = 1e9 + 7;
-const ll IFN = 1e18;
+
 // It’s just a bad day, not a bad life!
 // Leave Today for a Better Tomorrow
-
-int change_to_int(string x)
-{
-    int s = 0;
-    for (int i = 0; i < x.sz; i++)
-    {
-        s = s * 10 + (int)(x[i] - '0');
-    }
-    return s;
-}
 
 int main()
 {
     fast_out();
-    string a[11] = {"ABSINTH", "BEER", "BRANDY", "CHAMPAGNE", "GIN", "RUM", "SAKE", "TEQUILA", "VODKA", "WHISKEY", "WINE"};
     int n;
     cin >> n;
-    int cnt = 0;
-    while (n--)
+    vti a(n);
+    map<int, int> mp;
+    fat(x, a)
     {
-        string s;
-        cin >> s;
-        if (s[0] >= '0' && s[0] <= '9')
+        cin >> x;
+        mp[x]++;
+    }
+    int l = 0;
+    int cnt = 0;
+    int step = a[0];
+    while (l < a.sz)
+    {
+        if (mp[step] > 0)
         {
-            int age = change_to_int(s);
-            if (age < 18)
-                cnt++;
+            mp[step]--;
         }
-        else
+        if (mp[step] == 0)
         {
-            for (int i = 0; i < 11; i++)
+            step = a[l + 1];
+            cnt++;
+            if (l + 1 >= a.sz)
             {
-                if (s == a[i])
-                {
-                    cnt++;
-                    break;
-                }
+                break;
             }
         }
+        cout << step sp;
+        l++;
     }
-    cout << cnt;
+    cout nl << cnt;
+    /*
+    trang thứ i chứa một bí ẩn sẽ được giải thích ở ai
+
+    */
 }

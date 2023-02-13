@@ -28,48 +28,55 @@ using namespace std;
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL)
 const int mod = 1e9 + 7;
-const ll IFN = 1e18;
+
 // It’s just a bad day, not a bad life!
 // Leave Today for a Better Tomorrow
 
-int change_to_int(string x)
+void solve()
 {
-    int s = 0;
-    for (int i = 0; i < x.sz; i++)
+    int n;
+    cin >> n;
+    vector<pair<int, int>> a;
+    ll s = 0;
+    for (int i = 0; i < n; i++)
     {
-        s = s * 10 + (int)(x[i] - '0');
+        int x, y;
+        cin >> x >> y;
+        a.pb({max(x, y), min(x, y)});
+        s += min(x, y) * 2;
     }
-    return s;
+    sort(all(a));
+    vti b;
+    // b.pb(a[0].first);
+
+    for (int i = 0; i < a.sz - 1; i++)
+    {
+        s += abs(a[i].first - a[i + 1].first);
+    }
+    s += a[0].first + a[n - 1].first;
+    cout << s nl;
+    /*
+    1 1
+    3 2
+    4 1
+    5 4
+    
+    */
+
+
+
+    /*
+    4 2 2 2 3 2 3 2 2
+    */
 }
 
 int main()
 {
     fast_out();
-    string a[11] = {"ABSINTH", "BEER", "BRANDY", "CHAMPAGNE", "GIN", "RUM", "SAKE", "TEQUILA", "VODKA", "WHISKEY", "WINE"};
-    int n;
-    cin >> n;
-    int cnt = 0;
-    while (n--)
+    int t;
+    cin >> t;
+    wh(t--)
     {
-        string s;
-        cin >> s;
-        if (s[0] >= '0' && s[0] <= '9')
-        {
-            int age = change_to_int(s);
-            if (age < 18)
-                cnt++;
-        }
-        else
-        {
-            for (int i = 0; i < 11; i++)
-            {
-                if (s == a[i])
-                {
-                    cnt++;
-                    break;
-                }
-            }
-        }
+        solve();
     }
-    cout << cnt;
 }

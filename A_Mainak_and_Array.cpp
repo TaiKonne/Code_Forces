@@ -28,48 +28,52 @@ using namespace std;
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL)
 const int mod = 1e9 + 7;
-const ll IFN = 1e18;
+
 // It’s just a bad day, not a bad life!
 // Leave Today for a Better Tomorrow
 
-int change_to_int(string x)
+void solve()
 {
-    int s = 0;
-    for (int i = 0; i < x.sz; i++)
+    int n;
+    cin >> n;
+    vti a(n);
+    int Min = 1e9, Max = 0;
+    int k = 0;
+    fat(x, a)
     {
-        s = s * 10 + (int)(x[i] - '0');
+        k++;
+        cin >> x;
+        Min = min(Min, x);
+        Max = max(Max, x);
     }
-    return s;
+
+    int Max1 = a[n - 1] - a[0];
+    for (int i = 0; i < n - 1; i++)
+    {
+        Max1 = max(Max1, a[i] - a[i + 1]);
+    }
+    cout << max({Max1, Max - a[0], a[n - 1] - Min}) nl;
+
+    /*
+    2 1 4 5 3
+
+    */
+    /*
+    chọn 1 phân đoạn bất kì
+    - thực hiện chính xác 1 lần
+        chọn 2 số nguyên l, r và một số nguyên dương k bất kì
+        lập lại điều này k lần al=al+1,al+1=al+2,...
+    output: tìm max value của (an-a1)
+    */
 }
 
 int main()
 {
     fast_out();
-    string a[11] = {"ABSINTH", "BEER", "BRANDY", "CHAMPAGNE", "GIN", "RUM", "SAKE", "TEQUILA", "VODKA", "WHISKEY", "WINE"};
-    int n;
-    cin >> n;
-    int cnt = 0;
-    while (n--)
+    int t;
+    cin >> t;
+    wh(t--)
     {
-        string s;
-        cin >> s;
-        if (s[0] >= '0' && s[0] <= '9')
-        {
-            int age = change_to_int(s);
-            if (age < 18)
-                cnt++;
-        }
-        else
-        {
-            for (int i = 0; i < 11; i++)
-            {
-                if (s == a[i])
-                {
-                    cnt++;
-                    break;
-                }
-            }
-        }
+        solve();
     }
-    cout << cnt;
 }

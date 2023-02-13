@@ -28,48 +28,61 @@ using namespace std;
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL)
 const int mod = 1e9 + 7;
-const ll IFN = 1e18;
+
 // It’s just a bad day, not a bad life!
 // Leave Today for a Better Tomorrow
+string s = "TRIANGLE";
+string s1 = "SEGMENT";
+string s2 = "IMPOSSIBLE";
 
-int change_to_int(string x)
+bool tri(int a, int b, int c)
 {
-    int s = 0;
-    for (int i = 0; i < x.sz; i++)
+    if (a + b > c && a + c > b && c + b > a)
     {
-        s = s * 10 + (int)(x[i] - '0');
+        return true;
     }
-    return s;
+    return false;
+}
+
+bool seg(int a, int b, int c)
+{
+    if (a + b == c || a + c == b || c + b == a)
+    {
+        return true;
+    }
+    return false;
 }
 
 int main()
 {
     fast_out();
-    string a[11] = {"ABSINTH", "BEER", "BRANDY", "CHAMPAGNE", "GIN", "RUM", "SAKE", "TEQUILA", "VODKA", "WHISKEY", "WINE"};
-    int n;
-    cin >> n;
-    int cnt = 0;
-    while (n--)
+    vti a(4);
+    set<int> b;
+    fat(x, a)
     {
-        string s;
-        cin >> s;
-        if (s[0] >= '0' && s[0] <= '9')
-        {
-            int age = change_to_int(s);
-            if (age < 18)
-                cnt++;
-        }
-        else
-        {
-            for (int i = 0; i < 11; i++)
-            {
-                if (s == a[i])
-                {
-                    cnt++;
-                    break;
-                }
-            }
-        }
+        cin >> x;
     }
-    cout << cnt;
+    // 0 1 2 3
+    sort(all(a));
+    if(tri(a[0],a[1],a[2])==true);
+    {
+        cout<<s;
+    }
+    else if(tri(a[0],a[1],a[3])==true)
+    {
+
+    }
+    else if(tri(a[1],a[2],a[3])=true)
+    {
+
+    }
+
+
+    /*
+    1 2 3 4
+    4 2 3
+    a+b>c;
+    a+c>b;
+    b+c>a;
+    */
 }

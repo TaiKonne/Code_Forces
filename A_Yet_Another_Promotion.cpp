@@ -28,48 +28,37 @@ using namespace std;
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL)
 const int mod = 1e9 + 7;
-const ll IFN = 1e18;
+
 // It’s just a bad day, not a bad life!
 // Leave Today for a Better Tomorrow
 
-int change_to_int(string x)
+void solve()
 {
-    int s = 0;
-    for (int i = 0; i < x.sz; i++)
-    {
-        s = s * 10 + (int)(x[i] - '0');
-    }
-    return s;
+    ll a, b, n, m;
+    cin >> a >> b >> n >> m;
+
+
+    cout nl;
+    /*
+    chỉ bán 2 ngày 1 tháng và giá 2 ngày khác nhau
+    n: số khoai tây muốn mua
+    m: cứ mỗi m kg thì được +1 kg
+    1kg khoai tây có giá a ngày thứ 1
+    ngày thứ 2 là giá = b
+    2 : 5
+    4
+
+    
+    */
 }
 
 int main()
 {
     fast_out();
-    string a[11] = {"ABSINTH", "BEER", "BRANDY", "CHAMPAGNE", "GIN", "RUM", "SAKE", "TEQUILA", "VODKA", "WHISKEY", "WINE"};
-    int n;
-    cin >> n;
-    int cnt = 0;
-    while (n--)
+    int t;
+    cin >> t;
+    wh(t--)
     {
-        string s;
-        cin >> s;
-        if (s[0] >= '0' && s[0] <= '9')
-        {
-            int age = change_to_int(s);
-            if (age < 18)
-                cnt++;
-        }
-        else
-        {
-            for (int i = 0; i < 11; i++)
-            {
-                if (s == a[i])
-                {
-                    cnt++;
-                    break;
-                }
-            }
-        }
+        solve();
     }
-    cout << cnt;
 }

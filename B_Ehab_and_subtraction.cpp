@@ -35,24 +35,39 @@ const int mod = 1e9 + 7;
 int main()
 {
     fast_out();
-    int n;
-    cin >> n;
-    vti a(n);
-    fat(x, a)
+    int n, k;
+    cin >> n >> k;
+    set<int> a;
+    for (int i = 0; i < n; i++)
     {
-        cin >> x;
+        int z;
+        cin >> z;
+        a.insert(z);
     }
-    int cnt = 0;
-    int l = 0;
-    while (l < n)
+    int step = 0, s = 0;
+    int st = *a.begin();
+    for (auto x : a)
     {
-        cnt++;
-        int Max = l;
-        while (l <= Max && l < n)
+        if (k - 1 == -1)
         {
-            Max = max(a[l] - 1, Max);
-            l++;
+            break;
         }
+        if (x - s > 0)
+        {
+            cout << x - s nl;
+            s += (x - s);
+        }
+        else
+            cout << 0 nl;
+        k--;
     }
-    cout << cnt;
+    while (k > 0)
+    {
+        k--;
+        cout << 0 nl;
+    }
+    /*
+    3 3 5 10
+    3 3 2 7
+    */
 }

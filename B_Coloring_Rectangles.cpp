@@ -32,27 +32,22 @@ const int mod = 1e9 + 7;
 // It’s just a bad day, not a bad life!
 // Leave Today for a Better Tomorrow
 
+void solve()
+{
+    double a, b;
+    cin >> a >> b;
+    int fl = ceil((a * b) / 3);
+    // cout << (a * b) % ((a * b) - fl) nl;
+    cout << fl nl;
+}
+
 int main()
 {
     fast_out();
-    int n;
-    cin >> n;
-    vti a(n);
-    fat(x, a)
+    int t;
+    cin >> t;
+    wh(t--)
     {
-        cin >> x;
+        solve();
     }
-    int cnt = 0;
-    int l = 0;
-    while (l < n)
-    {
-        cnt++;
-        int Max = l;
-        while (l <= Max && l < n)
-        {
-            Max = max(a[l] - 1, Max);
-            l++;
-        }
-    }
-    cout << cnt;
 }

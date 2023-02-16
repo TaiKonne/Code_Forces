@@ -37,22 +37,19 @@ int main()
     fast_out();
     int n;
     cin >> n;
-    vti a(n);
-    fat(x, a)
-    {
-        cin >> x;
-    }
+    string a;
+    cin >> a;
     int cnt = 0;
-    int l = 0;
-    while (l < n)
+    for (int i = 1; i < a.sz - 1; i++)
     {
-        cnt++;
-        int Max = l;
-        while (l <= Max && l < n)
-        {
-            Max = max(a[l] - 1, Max);
-            l++;
-        }
+        if (a[i] != a[i - 1] && a[i] != a[i + 1])
+            cnt++;
     }
-    cout << cnt;
+    // cout << cnt nl;
+    if (cnt % 2 == 0)
+    {
+        yep;
+    }
+    else
+        nope;
 }

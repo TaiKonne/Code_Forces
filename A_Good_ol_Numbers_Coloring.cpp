@@ -32,27 +32,18 @@ const int mod = 1e9 + 7;
 // It’s just a bad day, not a bad life!
 // Leave Today for a Better Tomorrow
 
+void solve()
+{
+    int a, b;
+}
+
 int main()
 {
     fast_out();
-    int n;
-    cin >> n;
-    vti a(n);
-    fat(x, a)
+    int t;
+    cin >> t;
+    wh(t--)
     {
-        cin >> x;
+        solve();
     }
-    int cnt = 0;
-    int l = 0;
-    while (l < n)
-    {
-        cnt++;
-        int Max = l;
-        while (l <= Max && l < n)
-        {
-            Max = max(a[l] - 1, Max);
-            l++;
-        }
-    }
-    cout << cnt;
 }

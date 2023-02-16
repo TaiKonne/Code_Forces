@@ -35,24 +35,28 @@ const int mod = 1e9 + 7;
 int main()
 {
     fast_out();
-    int n;
-    cin >> n;
+    // freopen("input.txt", "r", stdin);
+    // freopen("output.txt", "w", stdout);
+    int n, k;
+    cin >> n >> k;
     vti a(n);
-    fat(x, a)
+    fat(x, a) cin >> x;
+    int cnt = -1;
+    for (int i = k - 1; i < a.sz; i++)
     {
-        cin >> x;
-    }
-    int cnt = 0;
-    int l = 0;
-    while (l < n)
-    {
-        cnt++;
-        int Max = l;
-        while (l <= Max && l < n)
+        if (a[i] == 1)
         {
-            Max = max(a[l] - 1, Max);
-            l++;
+            cout << i + 1;
+            return 0;
         }
     }
-    cout << cnt;
+
+    for (int i = 0; i < k; i++)
+    {
+        if (a[i] == 1)
+        {
+            cout << i + 1;
+            return 0;
+        }
+    }
 }

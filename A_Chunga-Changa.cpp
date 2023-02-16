@@ -28,31 +28,13 @@ using namespace std;
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL)
 const int mod = 1e9 + 7;
-
+ 
 // It’s just a bad day, not a bad life!
 // Leave Today for a Better Tomorrow
+
 
 int main()
 {
     fast_out();
-    int n;
-    cin >> n;
-    vti a(n);
-    fat(x, a)
-    {
-        cin >> x;
-    }
-    int cnt = 0;
-    int l = 0;
-    while (l < n)
-    {
-        cnt++;
-        int Max = l;
-        while (l <= Max && l < n)
-        {
-            Max = max(a[l] - 1, Max);
-            l++;
-        }
-    }
-    cout << cnt;
+    
 }

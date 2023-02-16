@@ -37,22 +37,21 @@ int main()
     fast_out();
     int n;
     cin >> n;
-    vti a(n);
-    fat(x, a)
+    string a;
+    cin >> a;
+    for (int i = 0; i < a.sz - 1; i++)
     {
-        cin >> x;
-    }
-    int cnt = 0;
-    int l = 0;
-    while (l < n)
-    {
-        cnt++;
-        int Max = l;
-        while (l <= Max && l < n)
+        if (a[i] != a[i + 1])
         {
-            Max = max(a[l] - 1, Max);
-            l++;
+            yep;
+            cout << a[i] << a[i + 1];
+            return 0;
         }
     }
-    cout << cnt;
+    nope;
+    /*
+    n/2
+
+    không có đoạn con nào có chữ trùng quá n/2
+    */
 }

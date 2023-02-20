@@ -34,21 +34,20 @@ const int mod = 1e9 + 7;
 
 void solve()
 {
-    ll a, b, n, m;
-    cin >> a >> b >> n >> m;
-
-    cout nl;
-    /*
-    chỉ bán 2 ngày 1 tháng và giá 2 ngày khác nhau
-    n: số khoai tây muốn mua
-    m: cứ mỗi m kg thì được +1 kg
-    1kg khoai tây có giá a ngày thứ 1
-    ngày thứ 2 là giá = b
-    2 : 5
-    4
-
-
-    */
+    int n, k;
+    cin >> n >> k;
+    set<int> b;
+    int first = 0, last = 0;
+    for (int i = 0; i < n; i++)
+    {
+        int l, r;
+        cin >> l >> r;
+        if (l == k)
+            first++;
+        if (r == k)
+            last++;
+    }
+    if(first>0&&last>0)yep;else nope;
 }
 
 int main()

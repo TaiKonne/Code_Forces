@@ -34,20 +34,42 @@ const int mod = 1e9 + 7;
 
 void solve()
 {
-    ll a, b, n, m;
-    cin >> a >> b >> n >> m;
+    int n;
+    cin >> n;
+    vti a(n);
+    fat(x, a) cin >> x;
 
-    cout nl;
+    vti b;
+    b.pb(a[0]);
+    for (int i = 1; i < a.sz; i++)
+    {
+        b.pb(a[i] - a[i - 1]);
+    }
+
+    int fl = 0;
+    for (int i = 0; i < b.sz; i++)
+    {
+        if (b[i] / 120 >= 1)
+        {
+            fl += b[i] / 120;
+        }
+        if (fl >= 2)
+        {
+            yep;
+            return;
+        }
+    }
+    if (1400 - a[a.sz - 1] >= 120)
+    {
+        yep;
+        return;
+    }
+    nope;
+    // fat(x, b) cout << x sp;
+    // cout nl;
     /*
-    chỉ bán 2 ngày 1 tháng và giá 2 ngày khác nhau
-    n: số khoai tây muốn mua
-    m: cứ mỗi m kg thì được +1 kg
-    1kg khoai tây có giá a ngày thứ 1
-    ngày thứ 2 là giá = b
-    2 : 5
-    4
-
-
+    100 200
+    walking boy cần 120p liên tục
     */
 }
 

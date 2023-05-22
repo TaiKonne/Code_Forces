@@ -30,13 +30,56 @@ using namespace std;
 const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
+// Leave Today for a Better Tomorrow
+
+bool check(int a, int b, int c, int d)
+{
+    if (a >= c && b <= d)
+        return true;
+    return false;
+}
 
 void solve()
 {
-    int a, b;
-    char aa;
-    cin >> a >> aa >> b;
-    cout << a + b nl;
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+    if (a == c && b == d)
+    {
+        cout << 0 nl;
+        return;
+    }
+    int fl = 0;
+    if (b > d)
+    {
+        cout << -1 nl;
+        return;
+    }
+    if (b <= d)
+    {
+
+        // while (b != d)
+        // {
+        //     fl++;
+        //     a++, b++;
+        // }
+
+        fl = abs(d - b);
+        b += fl;
+        a += fl;
+    }
+    if (a < c)
+    {
+        cout << -1 nl;
+        return;
+    }
+    if (a >= c)
+    {
+        cout << fl + abs(a - c) nl;
+    }
+    else
+        cout << -1 nl;
+    // cout << a sp << b nl;
+    // cout << "----" nl;
 }
 
 int main()

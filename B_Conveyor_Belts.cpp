@@ -30,13 +30,24 @@ using namespace std;
 const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
+// Leave Today for a Better Tomorrow
 
 void solve()
 {
-    int a, b;
-    char aa;
-    cin >> a >> aa >> b;
-    cout << a + b nl;
+    int n, x1, y1, x2, y2;
+    cin >> n >> x1 >> y1 >> x2 >> y2;
+
+    cout << abs(min({x1, y1, n - x1 + 1, n - y1 + 1}) - min({x2, y2, n - x2 + 1, n - y2 + 1})) nl;
+
+    /*
+    1 3 4 6
+    1 1|8 8 7
+    2 2|7 7 5
+    3 3|6 6 3
+    4 4|5 5 1
+
+
+    */
 }
 
 int main()

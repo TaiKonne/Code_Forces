@@ -36,8 +36,8 @@ int main()
     int n, a, b, c;
     cin >> n >> a >> b >> c;
     int cnt = 0;
+    
     // anh trai có ruy băng dài n
     // sau khi cut mỗi đoạn phải có chiều dài a,b,c
     // sau khi cut các mảnh phải là tối đa theo yêu cầu
-    for(int i=)
 }

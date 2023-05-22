@@ -30,13 +30,29 @@ using namespace std;
 const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
-
+// Leave Today for a Better Tomorrow
+/*var a = document.querySelectorAll(".MJX_Assistive_MathML")
+a.forEach(s=> s.remove())*/
 void solve()
 {
-    int a, b;
-    char aa;
-    cin >> a >> aa >> b;
-    cout << a + b nl;
+    ll n;
+    cin >> n;
+    int cnt = 0, cnt1 = 0;
+    ;
+    for (int i = 1; cnt1 < n; i++)
+    {
+        cnt += 2;
+        if (cnt % 2 == 0)
+            cnt1++;
+        cout << cnt sp;
+    }
+    cout nl;
+    /*
+
+    2 4 6 8 10 12
+
+
+    */
 }
 
 int main()

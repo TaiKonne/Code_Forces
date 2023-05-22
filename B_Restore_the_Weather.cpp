@@ -30,13 +30,51 @@ using namespace std;
 const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
-
+// Leave Today for a Better Tomorrow
+/*var a = document.querySelectorAll(".MJX_Assistive_MathML")
+a.forEach(s=> s.remove())*/
 void solve()
 {
-    int a, b;
-    char aa;
-    cin >> a >> aa >> b;
-    cout << a + b nl;
+
+    int n, k;
+    cin >> n >> k;
+    vector<pair<int, int>> a;
+    for (int i = 0; i < n; i++)
+    {
+        int z;
+        cin >> z;
+        a.pb(make_pair(z, i));
+    }
+    vti b(n);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> b[i];
+    }
+
+    sort(all(a));
+    sort(all(b));
+    vti z(n);
+    for (int i = 0; i < n; i++)
+    {
+        z[a[i].second] = b[i];
+    }
+    for (int i = 0; i < n; i++)
+    {
+        cout << z[i] sp;
+    }
+    cout nl;
+    /*
+
+    mảng a chứa dự báo thời tiết cho n này
+    ai: nhiệt độ dự đoán
+    bi: nhiệt độ thật nhưng bị lộn xộn
+    dự báo ko lệnh quá k độ
+    | a[i]-b[i]|<=k
+
+    -1 3 -2 0 -5 -1
+    0 0 -1 4 -4   0
+
+    */
 }
 
 int main()

@@ -30,22 +30,28 @@ using namespace std;
 const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
-
-void solve()
-{
-    int a, b;
-    char aa;
-    cin >> a >> aa >> b;
-    cout << a + b nl;
-}
+// Leave Today for a Better Tomorrow
 
 int main()
 {
     fast_out();
-    int t;
-    cin >> t;
-    wh(t--)
-    {
-        solve();
-    }
+    int w, h, u1, d1, u2, d2;
+    cin >> w >> h;
+    cin >> u1 >> d1;
+    cin >> u2 >> d2;
+
+    int s = w;
+    s += ((h * (h + 1)) / 2) - u1;
+    if (s < 0)
+        s = 0;
+    // s -= u2;
+
+    // if (s < 0)
+    //     s = 0;
+
+    if (s < 0)
+        cout << 0;
+    else
+        cout << s;
+
 }

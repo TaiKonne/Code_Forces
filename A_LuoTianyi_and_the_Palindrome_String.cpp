@@ -30,13 +30,23 @@ using namespace std;
 const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
+// Leave Today for a Better Tomorrow
 
 void solve()
 {
-    int a, b;
-    char aa;
-    cin >> a >> aa >> b;
-    cout << a + b nl;
+    string a;
+    cin >> a;
+    set<char> b;
+    for (auto x : a)
+    {
+        b.insert(x);
+    }
+    if (b.sz == 1)
+    {
+        cout << -1 nl;
+    }
+    else
+        cout << a.sz - 1 nl;
 }
 
 int main()

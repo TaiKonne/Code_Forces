@@ -30,13 +30,52 @@ using namespace std;
 const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
+// Leave Today for a Better Tomorrow
 
+bool my_check(string a)
+{
+    if (a.sz == 2)
+    {
+        return false;
+    }
+    if (a[0] == a[a.sz - 1])
+    {
+        set<char> b;
+        for (int i = 0; i < a.sz / 2; i++)
+        {
+            if (a[i] == a[a.sz - 1 - i])
+            {
+                b.insert(a[i]);
+            }
+            else
+            {
+                return false;
+            }
+        }
+        if (b.sz >= 2 && a.sz > 3)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    else
+    {
+        return false;
+    }
+}
+/*var a = document.querySelectorAll(".MJX_Assistive_MathML")
+a.forEach(s=> s.remove())*/
 void solve()
 {
-    int a, b;
-    char aa;
-    cin >> a >> aa >> b;
-    cout << a + b nl;
+    string a;
+    cin >> a;
+    if (my_check(a) == true)
+        yep;
+    else
+        nope;
 }
 
 int main()
@@ -48,4 +87,7 @@ int main()
     {
         solve();
     }
+    /*
+
+    */
 }

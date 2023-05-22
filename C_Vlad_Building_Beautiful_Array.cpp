@@ -30,13 +30,49 @@ using namespace std;
 const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
-
+// Leave Today for a Better Tomorrow
+/*var a = document.querySelectorAll(".MJX_Assistive_MathML")
+a.forEach(s=> s.remove())*/
 void solve()
 {
-    int a, b;
-    char aa;
-    cin >> a >> aa >> b;
-    cout << a + b nl;
+    int n;
+    cin >> n;
+    vti a(n);
+    int chan = 0, le = 0;
+    fat(x, a)
+    {
+        cin >> x;
+        if (x % 2 == 0)
+            chan++;
+    }
+    le = n - chan;
+    bool ok = false;
+    for (int i = 0; i < n - 1; i++)
+    {
+        if (a[i] % 2 != a[i + 1] % 2)
+        {
+            ok = true;
+            break;
+        }
+    }
+    if (ok == false)
+    {
+        yep;
+    }
+    else
+    {
+        sort(all(a));
+        int fl = a[0];
+        if (fl % 2 == 0)
+            nope;
+        else
+            yep;
+    }
+    /*
+
+    Để xây dựng mảng b, Vlad có thể gán cho mỗi bi giá trị ai hoặc ai−aj,
+     trong đó có thể chọn bất kỳ j nào từ 1 đến n.
+    */
 }
 
 int main()

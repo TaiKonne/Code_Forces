@@ -30,13 +30,60 @@ using namespace std;
 const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
+// Leave Today for a Better Tomorrow
+/*var a = document.querySelectorAll(".MJX_Assistive_MathML")
+a.forEach(s=> s.remove())*/
+
+struct tube
+{
+    /* data */
+    int index = 0;
+    int giay = 0;
+    int Max = 0;
+};
 
 void solve()
 {
-    int a, b;
-    char aa;
-    cin >> a >> aa >> b;
-    cout << a + b nl;
+    int n, m;
+    cin >> n >> m;
+    vti a(n);
+    vti b(n);
+    int fl = 0;
+    fat(x, a)
+    {
+        cin >> x;
+        if (x <= m)
+            fl = 1;
+    }
+    fat(x, b) cin >> x;
+
+    if (fl == 1)
+    {
+        int fl = 0;
+        tube t;
+
+        for (int i = 0; i < n; i++)
+        {
+            if (m - a[i] - i >= 0)
+            {
+                if (t.Max < b[i])
+                {
+                    t.Max = b[i];
+                    t.index = i + 1;
+                }
+            }
+        }
+        if (t.index == 0)
+        {
+            cout << -1 nl;
+        }
+        else
+            cout << t.index nl;
+    }
+    else
+    {
+        cout << -1 nl;
+    }
 }
 
 int main()

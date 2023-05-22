@@ -30,13 +30,25 @@ using namespace std;
 const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
-
+// Leave Today for a Better Tomorrow
+/*var a = document.querySelectorAll(".MJX_Assistive_MathML")
+a.forEach(s=> s.remove())*/
 void solve()
 {
-    int a, b;
-    char aa;
-    cin >> a >> aa >> b;
-    cout << a + b nl;
+    int n;
+    cin >> n;
+    vector<ll> a(n);
+    int cnt = 0;
+    fat(x, a)
+    {
+        cin >> x;
+    }
+    int Maxd = 0;
+    int Mind = mod;
+    int Maxa = -mod;
+    int Mina = 0;
+    sort(all(a));
+    cout << (ll)max((ll)(a[0] * a[1]), (ll)(a[n - 1] * a[n - 2])) nl;
 }
 
 int main()

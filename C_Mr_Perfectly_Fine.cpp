@@ -30,13 +30,49 @@ using namespace std;
 const int mod = 1e9 + 7;
 
 // It’s just a bad day, not a bad life!
+// Leave Today for a Better Tomorrow
 
 void solve()
 {
-    int a, b;
-    char aa;
-    cin >> a >> aa >> b;
-    cout << a + b nl;
+    int n;
+    cin >> n;
+
+    vector<int> motmot;
+    vector<int> motkhong;
+    vector<int> khongmot;
+
+    int all = 0;
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        string fl;
+        cin >> x >> fl;
+        if (fl == "11")
+            motmot.push_back(x);
+        else if (fl == "10")
+            motkhong.push_back(x);
+        else if (fl == "01")
+            khongmot.push_back(x);
+    }
+    sort(all(motmot));
+    sort(all(motkhong));
+    sort(all(khongmot));
+    int Min = mod;
+    if (motmot.sz > 0)
+    {
+        Min = min(motmot[0], Min);
+    }
+
+    if (khongmot.sz > 0 && motkhong.sz > 0)
+    {
+        Min = min(khongmot[0] + motkhong[0], Min);
+    }
+    if (Min != mod)
+    {
+        cout << Min nl;
+        return;
+    }
+    cout << -1 nl;
 }
 
 int main()
